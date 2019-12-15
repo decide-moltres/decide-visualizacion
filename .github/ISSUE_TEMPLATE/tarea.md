@@ -1,5 +1,5 @@
 ---
-name: Tarea de implementación
+name: Tarea
 about: Para planificar una nueva tarea de implementación
 title: ''
 labels: ''
