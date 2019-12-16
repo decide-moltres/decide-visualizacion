@@ -71,7 +71,7 @@ MODULES = [
     'voting',
 ]
 
-BASEURL = 'http://decide-moltres-visualizacion'
+BASEURL = 'http://decide-moltres-visualizacion/'
 
 APIS = {
     'authentication': BASEURL,
