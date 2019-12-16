@@ -77,7 +77,7 @@ APIS = {
     'authentication': BASEURL,
     'base': BASEURL,
     'booth': BASEURL,
-    'census': BASSEURL,
+    'census': BASEURL,
     'mixnet': BASEURL,
     'postproc': BASEURL,
     'store': BASEURL,

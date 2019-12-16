@@ -1,19 +1,18 @@
 dist: xenial
-
 services:
-  - postgresql
+- postgresql
 addons:
-  postgresql: "9.4"
+  postgresql: '9.4'
 before_script:
-  - psql -U postgres -c "create user decide password 'decide'"
-  - psql -U postgres -c "create database test_decide owner decide"
-  - psql -U postgres -c "ALTER USER decide CREATEDB"
+- psql -U postgres -c "create user decide password 'decide'"
+- psql -U postgres -c "create database test_decide owner decide"
+- psql -U postgres -c "ALTER USER decide CREATEDB"
 language: python
 python:
-  - "3.6"
+- '3.6'
 install:
-  - pip install -r requirements.txt
-  - pip install codacy-coverage
+- pip install -r requirements.txt
+- pip install codacy-coverage
 script:
 - cd decide
 - cp travis_local_settings.py local_settings.py
@@ -22,3 +21,5 @@ deploy:
   provider: heroku
   app: decide-moltres-visualizacion
   strategy: git
+  api_key:
+    secure: n3fabFd59Vf10CVi5oRtulKWze7vI9cPn1VciKJqic+t2CtSAilvR/WXvtC76S7AsrYmph4RnQEEAXHH+kieq1YJFR9eo+CkPOpvRlZWMI7K74ESTdq6bPra6awR9FeBjMVCC77FNB45Y+r7vdHwc/0DEqvywqdiZ6P6BFfKqljisZEhjgdc7I7AyRsBBypYy+ValSg9oAlcFqxbEuN8nFYvYtY/jRwHfzIW3++0S3PY9ZuDKjIDGDj2MAEi0QrDPrdoI0L1Bs652lxa+7z4kZKLLb4c8dHFgaAIZcgl2HMkL0QOxa8Xdg7Fwum09RS4LwCsCvQNJee7EWi+G09zR9GC7+Lpe794hvK7l2ZeNZH/q9spSt6rmL95EWov6f5zC3+mJ7Qi7kyLRSb4x99iyNT+odkxzeC4zT0GphiDE8FYbEh0ZofZ7unXqg+GPrp0fMP4goV2DuzdjX0vFoY3gXtc8UYIJZwO8//kOAo0kyX1jK3l6gHqY1pVTaygCiWAw3868eXC405TPcf5MCWnbfoFLdo3QNxrtSs0uZRnMG/uZ+i5pl3GsjCCgq7+snVLufOFtWZPGgwWmPq7xuDqZ+J2N7OHqaheaoPYemHeUjxn6voIipgL9xu28L8i5SGHmGddt8GPVYJc9QnNVcb8lOJQRgxbwtABRKgoPJyQTb0=
