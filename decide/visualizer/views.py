@@ -4,9 +4,8 @@ from django.conf import settings
 from django.http import Http404, HttpResponse
 import xlwt
 from voting.models import Voting
-
+from reportlab.pdfgen import canvas
 from base import mods
-
 
 class VisualizerView(TemplateView):
     template_name = 'visualizer/visualizer.html'
@@ -55,4 +54,22 @@ def export_users_xls(request, voting_id):
                     ws.write(row_num, col_num, valores[aux], font_style)
                     col_num +=1
     wb.save(response)
+    return response
+
+def get_pdf(request, voting_id):
+
+    # Create the HttpResponse object with the appropriate PDF headers.
+    response = HttpResponse(content_type='application/ms-pdf')
+    response['Content-Disposition'] = 'attachment; filename="Datos.pdf"'
+
+    # Create the PDF object, using the response object as its "file."
+    p = canvas.Canvas(response)
+
+    # Draw things on the PDF. Here's where the PDF generation happens.
+    # See the ReportLab documentation for the full list of functionality.
+    p.drawString(100, 100, "Hello world.")
+
+    # Close the PDF object cleanly, and we're done.
+    p.showPage()
+    p.save()
     return response
