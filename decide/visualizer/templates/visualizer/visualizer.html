@@ -70,76 +70,31 @@
         }) 
     </script>
     <script>
-        function extraerNombre(object, i) {
-         var name = "";
-         name = object[i].option  
-         return name
-     };
- 
-     function extraerNumeroDeVotos(object, i) {
-         var name = "";
-         name = object[i].votes  
-         return name
-     };
-     </script>
-   <script>
- 
-   
-     new Morris.Line({
- 
-   // ID of the element in which to draw the chart.
-   element: 'graficaLinea',
-   // Chart data records -- each entry in this array corresponds to a point on
-   // the chart.
-   data: [
-     { name: extraerNombre(voting.postproc, 0), value: extraerNumeroDeVotos(voting.postproc, 0),
-       name: extraerNombre(voting.postproc, 1), value: extraerNumeroDeVotos(voting.postproc, 1) }
-   ],
-   // The name of the data record attribute that contains x-values.
-   xkey: ['name'],
-   // A list of names of data record attributes that contain y-values.
-   ykeys: ['value'],
-   // Labels for the ykeys -- will be displayed when you hover over the
-   // chart.
-   labels: ['Votos']
- });
- 
- new Morris.Bar({
-   // ID of the element in which to draw the chart.
-   element: 'graficaBarras',
-   // Chart data records -- each entry in this array corresponds to a point on
-   // the chart.
-   data: [
-     { name: extraerNombre(voting.postproc, 0), value: extraerNumeroDeVotos(voting.postproc, 0),
-         name: extraerNombre(voting.postproc, 1), value: extraerNumeroDeVotos(voting.postproc, 1)
-     }
-   ],
-   // The name of the data record attribute that contains x-values.
-   xkey: 'name',
-   // A list of names of data record attributes that contain y-values.
-   ykeys: ['value'],
-   // Labels for the ykeys -- will be displayed when you hover over the
-   // chart.
-   labels: ['Votos'],
-   barColors: ['#006cff'],
-   stacked: true
- 
- });
- 
- new Morris.Donut({
-   // ID of the element in which to draw the chart.
-   element: 'graficaQueso',
-   // Chart data records -- each entry in this array corresponds to a point on
-   // the chart.
-   data: [
-     { label: extraerNombre(voting.postproc, 0), value: extraerNumeroDeVotos(voting.postproc, 0),
-         name: extraerNombre(voting.postproc, 1), value: extraerNumeroDeVotos(voting.postproc, 1)
-      }
-   ],
-   colors: ['#006cff', '#5efc89', ' #d4b2ff', '#f5b2ff', '#fff6b2'],
-   stacked: true
- 
- });
+
+
+function extraerDatos(a) {
+    var res = [];
+    var name = "";
+    var votes = "";
+    for (var i = 0; i  < a; i++)  {
+        name = voting.postproc[i].option  
+        votes = voting.postproc[i].votes
+        res.push({
+            y: name, a: votes
+        });
+    }
+    return res;
+}
+var graph = new Morris.Bar({
+  element: 'graficaBarras',
+  data: [
+      {y: "Ejemplo", a: 0}
+  ],
+  xkey: 'y',
+  ykeys: ['a'],
+  labels: ['Votos']
+});
+graph.setData(extraerDatos(5))
     </script>
 </body>
 {% endblock %}
