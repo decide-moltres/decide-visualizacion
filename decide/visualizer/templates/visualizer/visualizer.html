@@ -45,9 +45,8 @@
                     </tbody>
                 </table>
             </div>
-            <div id="graficaLinea" style="height: 250px;"></div>
             <div id="graficaBarras" style="height: 250px;"></div>
-            <div id="graficaQueso" style="height: 250px;"></div>    
+            <div id="graficaDonut" style="height: 250px;"></div>    
         </div>
     </div>
     <a href="excel"> Export this votation to excel</a>
@@ -80,21 +79,33 @@ function extraerDatos(a) {
         name = voting.postproc[i].option  
         votes = voting.postproc[i].votes
         res.push({
-            y: name, a: votes
+            label: name, value: votes
         });
     }
     return res;
 }
-var graph = new Morris.Bar({
+
+var graphBar = new Morris.Bar({
   element: 'graficaBarras',
   data: [
-      {y: "Ejemplo", a: 0}
+      {label: "Ejemplo", value: 0}
   ],
-  xkey: 'y',
-  ykeys: ['a'],
+  xkey: 'label',
+  ykeys: ['value'],
   labels: ['Votos']
 });
-graph.setData(extraerDatos(5))
+
+
+var graphDonut =  new Morris.Donut({
+   element: 'graficaDonut',
+   data: [
+     { label: "Ejemplo", value: 0 }
+   ],
+   colors: ['#006cff', '#5efc89', ' #d4b2ff', '#f5b2ff', '#fff6b2']
+ });
+
+ graphBar.setData(extraerDatos(voting.postproc.length))
+ graphDonut.setData(extraerDatos(voting.postproc.length))
     </script>
 </body>
 {% endblock %}
