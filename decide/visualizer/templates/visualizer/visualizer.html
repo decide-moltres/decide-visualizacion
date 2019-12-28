@@ -11,6 +11,11 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+    <!-- jQuery library -->
+    <script src="js/jquery.min.js"></script>
+    <!-- jsPDF library -->
+    <script src="js/jsPDF/dist/jspdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
 {% endblock %}
 
 {% block content %}
@@ -51,7 +56,7 @@
         </div>
     </div>
     <a href="excel"> Export this votation to excel</a>
-    <a href="pdf">Export this votation to PDF</a>
+    <a href="" onclick="exportarPdf();" id="elementH">Export this votation to PDF</a>
 {% endblock %}
 
 {% block extrabody %}
@@ -134,5 +139,26 @@ new Morris.Donut({
 
 });
     </script>
+
+    <script>
+    function exportarPdf(){
+        var doc = new jsPDF();
+        var elementHTML = $('#app-visualizer').html();
+        var specialElementHandlers = {
+            '#elementH': function (element, renderer) {
+                return true;
+        }
+    };
+    doc.fromHTML(elementHTML, 15, 15, {
+        'width': 170,
+        'elementHandlers': specialElementHandlers
+    });
+
+    // Save the PDF
+    doc.save('sample-document.pdf');
+    }
+    </script>
+
+
 </body>
 {% endblock %}
