@@ -56,15 +56,13 @@
                         </tr>
                     </tbody>
                 </table>
-            </div>   
+            </div>
         </div>
     </div>
-    <div id="graficaLinea" style="height: 250px;"></div>
+    <div id="graficaDonut" style="height: 250px;"></div>   
     <button id="graf1">Export this Chart to PNG</button>
     <div id="graficaBarras" style="height: 250px;"></div>
     <button id="graf2">Export this Chart to PNG</button>
-    <div id="graficaQueso" style="height: 250px;"></div>
-    <button id="graf3">Export this Chart to PNG</button>
     <a href="excel"> Export this votation to excel</a>
     <button id="save">Export this votation to PDF</button>
 {% endblock %}
@@ -86,68 +84,43 @@
         }) 
     </script>
     <script>
-    new Morris.Line({
-        
-  // ID of the element in which to draw the chart.
-  element: 'graficaLinea',
-  // Chart data records -- each entry in this array corresponds to a point on
-  // the chart.
-  data: [
-    { year: '5', value: 10},
-    { year: '2', value: 10 },
-    { year: '3', value: 5 },
-    { year: '4', value: 5 },
-    { year: '5', value: 20 }
-  ],
-  // The name of the data record attribute that contains x-values.
-  xkey: ['year'],
-  // A list of names of data record attributes that contain y-values.
-  ykeys: ['value'],
-  // Labels for the ykeys -- will be displayed when you hover over the
-  // chart.
-  labels: ['Value']
-});
 
-new Morris.Bar({
-  // ID of the element in which to draw the chart.
+
+function extraerDatos(a) {
+    var res = [];
+    var name = "";
+    var votes = "";
+    for (var i = 0; i  < a; i++)  {
+        name = voting.postproc[i].option  
+        votes = voting.postproc[i].votes
+        res.push({
+            label: name, value: votes
+        });
+    }
+    return res;
+}
+
+var graphBar = new Morris.Bar({
   element: 'graficaBarras',
-  // Chart data records -- each entry in this array corresponds to a point on
-  // the chart.
   data: [
-    { year: '2008', value: 20 },
-    { year: '2009', value: 10 },
-    { year: '2010', value: 5 },
-    { year: '2011', value: 5 },
-    { year: '2012', value: 20 }
+      {label: "Ejemplo", value: 0}
   ],
-  // The name of the data record attribute that contains x-values.
-  xkey: 'year',
-  // A list of names of data record attributes that contain y-values.
+  xkey: 'label',
   ykeys: ['value'],
-  // Labels for the ykeys -- will be displayed when you hover over the
-  // chart.
-  labels: ['Value'],
-  barColors: ['#006cff'],
-  stacked: true
-
+  labels: ['Votos']
 });
 
-new Morris.Donut({
-  // ID of the element in which to draw the chart.
-  element: 'graficaQueso',
-  // Chart data records -- each entry in this array corresponds to a point on
-  // the chart.
-  data: [
-    { label: '2008', value: 20 },
-    { label: '2009', value: 10 },
-    { label: '2010', value: 5 },
-    { label: '2011', value: 5 },
-    { label: '2012', value: 20 }
-  ],
-  colors: ['#006cff', '#5efc89', ' #d4b2ff', '#f5b2ff', '#fff6b2'],
-  stacked: true
 
-});
+var graphDonut =  new Morris.Donut({
+   element: 'graficaDonut',
+   data: [
+     { label: "Ejemplo", value: 0 }
+   ],
+   colors: ['#006cff', '#5efc89', ' #d4b2ff', '#f5b2ff', '#fff6b2']
+ });
+
+ graphBar.setData(extraerDatos(voting.postproc.length))
+ graphDonut.setData(extraerDatos(voting.postproc.length))
     </script>
 
     <script>
@@ -198,9 +171,9 @@ new Morris.Donut({
 <script>
     $("#graf1").click(function() {
     //Obtiene los valores de las imagenes que se van a generar
-	html2canvas(document.getElementById('graficaLinea')).then(canvas => {
-        var w = document.getElementById("graficaLinea").offsetWidth;
-        var h = document.getElementById("graficaLinea").offsetHeight;
+	html2canvas(document.getElementById('graficaDonut')).then(canvas => {
+        var w = document.getElementById("graficaDonut").offsetWidth;
+        var h = document.getElementById("graficaDonut").offsetHeight;
 
         //Co vierte el gráfico en una imagen
         var img = canvas.toDataURL("image/png", 1);
@@ -210,7 +183,7 @@ new Morris.Donut({
         //Añade la imagen al pdf
         doc.addImage(img, 'JPEG', 10, 10, w, h);
 
-        doc.save('GraficaLinea.pdf');
+        doc.save('GraficaDonut.pdf');
 
     }).catch(function(e) {
         console.log(e.message);
@@ -231,26 +204,6 @@ new Morris.Donut({
         doc.addImage(img, 'JPEG', 10, 10, w, h);
 
         doc.save('GraficaBarras.pdf');
-
-    }).catch(function(e) {
-        console.log(e.message);
-    });
-})
-</script>
-
-<script>
-    $("#graf3").click(function() {
-	html2canvas(document.getElementById('graficaQueso')).then(canvas => {
-        var w = document.getElementById("graficaQueso").offsetWidth;
-        var h = document.getElementById("graficaQueso").offsetHeight;
-
-        var img = canvas.toDataURL("image3/jpeg", 1);
-
-        var doc = new jsPDF('L', 'pt', [w, h]);
-
-        doc.addImage(img, 'JPEG', 10, 10, w, h);
-
-        doc.save('GraficaQueso.pdf');
 
     }).catch(function(e) {
         console.log(e.message);
