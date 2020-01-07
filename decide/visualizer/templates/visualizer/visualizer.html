@@ -58,6 +58,7 @@
                 </table>
             </div>
         </div>
+        <a title="Compartir en Facebook" id="facebook"><img src="https://cdn.icon-icons.com/icons2/1099/PNG/128/1485482214-facebook_78681.png" height="40" width="40"></a>
     </div>
 <!--Aquí se colocan los "div" en los que van insertados ambos tipos de gráficas-->
     <div id="graficaDonut" style="height: 250px;"></div>   
@@ -229,6 +230,14 @@ var graphDonut =  new Morris.Donut({
         console.log(e.message);
     });
 })
+</script>
+
+<script>
+    var facebookShareButton = document.getElementById('facebook');
+    var facebookShareButtonHref='http://www.facebook.com/sharer/sharer.php?';
+    facebookShareButtonHref += 'u='+document.URL;
+    facebookShareButtonHref += '&title='+document.title;
+    facebookShareButton.href = facebookShareButtonHref;
 </script>
 
 </body>
