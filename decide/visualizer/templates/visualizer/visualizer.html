@@ -59,6 +59,7 @@
             </div>
         </div>
     </div>
+<!--Aquí se colocan los "div" en los que van insertados ambos tipos de gráficas-->
     <div id="graficaDonut" style="height: 250px;"></div>   
     <button id="graf1">Export this Chart to PNG</button>
     <div id="graficaBarras" style="height: 250px;"></div>
@@ -85,14 +86,20 @@
     </script>
     <script>
 
-
+// Con esta función, conseguimos extraer los datos necesarios para que la librería morris
+// pueda trabajar con ellos. En concreto, extraemos, de cada uno de los resultados, el nombre
+// de este y su número de votos obtenidos.
 function extraerDatos(a) {
     var res = [];
     var name = "";
     var votes = "";
+    // Para cada resultado:
     for (var i = 0; i  < a; i++)  {
+        // Nombre
         name = voting.postproc[i].option  
+        // Número de votos
         votes = voting.postproc[i].votes
+        // Se añade al array que devolvemos
         res.push({
             label: name, value: votes
         });
@@ -100,6 +107,12 @@ function extraerDatos(a) {
     return res;
 }
 
+// Elemento de la librería de Morris que trabaja con la gráfica de Barras.
+// Recibe: "element": nombre del div en el que es insertada la gráfica;
+// "data" : donde insertamos un dato de ejemplo, ya que es indispensable para garantizar
+// la creación correcta de la gráfica
+// "xkey": Indica el nombre de los elementos situados en el eje X
+// "ykey": Indica, en un array, el nombre de los elementos situados en el eje Y
 var graphBar = new Morris.Bar({
   element: 'graficaBarras',
   data: [
@@ -110,7 +123,10 @@ var graphBar = new Morris.Bar({
   labels: ['Votos']
 });
 
-
+// Elemento de la librería de Morris que trabaja con la gráfica de Donut/Queso.
+// Recibe: "element": nombre del div en el que es insertada la gráfica;
+// "data" : donde insertamos un dato de ejemplo, ya que es indispensable para garantizar
+// "colors": Un array donde añadimos el nombre de los colores que deseamos que se usen en la gráfica
 var graphDonut =  new Morris.Donut({
    element: 'graficaDonut',
    data: [
@@ -119,6 +135,10 @@ var graphDonut =  new Morris.Donut({
    colors: ['#006cff', '#5efc89', ' #d4b2ff', '#f5b2ff', '#fff6b2']
  });
 
+// Por último, encontramos el método que hace todo posible, "setData". Este método que contiene
+// la librería de Morris nos facilita la actualización de los "data" de ambas gráficas. En este caso
+// añadimos nuestro método de extraer datos y le indicamos que lo haga con el número de resultados provenientes
+// del postprocesado.
  graphBar.setData(extraerDatos(voting.postproc.length))
  graphDonut.setData(extraerDatos(voting.postproc.length))
     </script>
