@@ -1,3 +1,97 @@
+.header{
+    width: 100%;
+    height: 80px;
+    display: block;
+    background-color: #101010;
+}
+
+.inner_header{
+    width: 1000px;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.logo_container{
+    height: 100%;
+    display: table;
+    float: left;
+}
+
+.logo_container h1{
+    color: white;
+    height:100%;
+    display: table-cell;
+    vertical-align: middle;
+    font-size:  32px;
+    font-weight: 800;
+
+}
+
+.navigation{
+    float: right;
+    height: 100%;
+}
+
+.navigation a{
+    height: 100%;
+    display: table;
+    float: left;
+    padding: 0px 20px;
+}
+
+.navigation a li{
+    display: table-cell;
+    vertical-align: middle;
+    height: 100%;
+    color: white;
+    font-size: 16px;
+}
+
+.content-table{
+    width: 40%;
+    border-collapse: collapse;
+    margin: 25px 0px;
+    font-size: 0.9em;
+    min-width: 490px;
+    text-align:center;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+}
+
+.content-table thead tr{
+    background-color: #FE4646;
+    color:  #ffffff;
+    text-align:center;
+    font-weight: bold;
+}
+
+.content-table th{
+    height: 40px;
+    padding: 15px;
+}
+.content-table td{
+      padding:15px;
+}
+
+tr:hover {background-color: #f5f5f5;}
+
+.content-table tbody tr{
+    border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+    border-bottom: 2px solid  #FE4646;
+}
+
+
+
+
 .voting {
     margin-top: 20px;
     margin-left: 40px;

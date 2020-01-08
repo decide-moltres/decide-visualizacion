@@ -99,5 +99,8 @@ ENV/
 # mypy
 .mypy_cache/
 
+#PycharmWS
+.idea/
+
 .vagrant
 .vscode

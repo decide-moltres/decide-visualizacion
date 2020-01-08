@@ -2,10 +2,6 @@
 {% load i18n static %}
 
 {% block extrahead %}
-    <link type="text/css" rel="stylesheet"
-         href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
-    <link type="text/css" rel="stylesheet"
-         href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css" />
     <link type="text/css" rel="stylesheet" href="{% static 'booth/style.css' %}" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
@@ -27,6 +23,21 @@
 
 {% block content %}
 <body>
+
+    <div class="header">
+        <div class="inner_header">
+            <div class="logo_container">
+                <h1> DECIDE </h1>
+            </div>
+
+            <ul class="navigation">
+                <a><li>Quienes somos</li></a>
+                <a><li>Contacto</li></a>
+
+            </ul>
+        </div>
+    </div>
+
     <div id="app-visualizer">
         <!-- Navbar -->
         <b-navbar type="dark" variant="secondary">
@@ -41,7 +52,8 @@
             <div v-else>
                 <h2 class="heading">Resultados:</h2>
 
-                <table class="table table-bordered table-striped">
+                <div style="overflow-x:auto;">
+                <table style="margin: 0 auto;" class="content-table"  >
                     <thead>
                         <tr>
                             <th>Opción</th>
@@ -50,13 +62,27 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="opt in voting.postproc" :key="opt.number">
-                            <th>[[opt.option]]</th>
-                            <td>[[opt.postproc]]</td>
-                            <td class="text-muted">[[opt.votes]]</td>
-                        </tr>
+
+                            <th>Benavides</th>
+                            <td>20</td>
+                            <td>20</td>
                     </tbody>
+                    <tbody>
+                            <th>Trinidad</th>
+                            <td>100</td>
+                            <td>100</td>
+
+                    </tbody>
+
+                     <tbody>
+                            <th>Corchueelo</th>
+                            <td>200</td>
+                            <td>200</td>
+
+                    </tbody>
+
                 </table>
+                </div>
             </div>
         </div>
     </div>
@@ -128,10 +154,13 @@ function extraerDatos(a) {
 // la creación correcta de la gráfica
 // "xkey": Indica el nombre de los elementos situados en el eje X
 // "ykey": Indica, en un array, el nombre de los elementos situados en el eje Y
+
 var graphBar = new Morris.Bar({
   element: 'graficaBarras',
   data: [
-      {label: "Ejemplo", value: 0}
+      {label: "Trinidad", value: 20},
+      {label: "Benavides", value: 100},
+      {label: "Corchu", value: 10}
   ],
   xkey: 'label',
   ykeys: ['value'],
@@ -145,8 +174,10 @@ var graphBar = new Morris.Bar({
 var graphDonut =  new Morris.Donut({
    element: 'graficaDonut',
    data: [
-     { label: "Ejemplo", value: 0 }
-   ],
+      {label: "Trinidad", value: 20},
+      {label: "Benavides", value: 100},
+      {label: "Corchu", value: 10}
+  ],
    colors: ['#006cff', '#5efc89', ' #d4b2ff', '#f5b2ff', '#fff6b2']
  });
 
@@ -154,8 +185,8 @@ var graphDonut =  new Morris.Donut({
 // la librería de Morris nos facilita la actualización de los "data" de ambas gráficas. En este caso
 // añadimos nuestro método de extraer datos y le indicamos que lo haga con el número de resultados provenientes
 // del postprocesado.
- graphBar.setData(extraerDatos(voting.postproc.length))
- graphDonut.setData(extraerDatos(voting.postproc.length))
+//graphBar.setData(extraerDatos(voting.postproc.length))
+//graphDonut.setData(extraerDatos(voting.postproc.length))
     </script>
 
     <script>
