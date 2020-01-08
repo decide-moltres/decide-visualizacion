@@ -2,6 +2,7 @@
 {% load i18n static %}
 
 {% block extrahead %}
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,800" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="{% static 'booth/style.css' %}" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
@@ -75,7 +76,7 @@
                     </tbody>
 
                      <tbody>
-                            <th>Corchueelo</th>
+                            <th>Corchuelo</th>
                             <td>200</td>
                             <td>200</td>
 
@@ -86,13 +87,23 @@
             </div>
         </div>
     </div>
+
+    <br>
 <!--Aquí se colocan los "div" en los que van insertados ambos tipos de gráficas-->
-    <div id="graficaDonut" style="height: 250px;"></div>   
-    <button id="graf1">Export this Chart to PNG</button>
+    <div id="graficaDonut" style="height: 250px;"></div>
+
+    <button class="btn btn1" id="graf1">Export this Chart to PNG</button>
+
+    <br>
+    <br>
+
     <div id="graficaBarras" style="height: 250px;"></div>
-    <button id="graf2">Export this Chart to PNG</button>
-    <a href="excel"> Export this votation to excel</a>
-    <button id="save">Export this votation to PDF</button>
+    <button class="btn btn2" id="graf2">Export this Chart to PNG</button>
+    <br>
+    <br>
+    <button class="btn btn3" id="save">Export this votation to PDF</button>
+    <a class="excel" href="excel"> Export this votation to excel</a>
+
 
     <!-- Enlace para compartir en twitter -->
     <a title="Twittear" id="twitter-share-button-linuxito.com"><img width="40" height="40" src="https://www.caminandoelmundoblog.com/wp-content/uploads/2017/11/Twitter-Download-PNG.png"></img></a>
@@ -164,7 +175,9 @@ var graphBar = new Morris.Bar({
   ],
   xkey: 'label',
   ykeys: ['value'],
-  labels: ['Votos']
+  labels: ['Votos'],
+  barColors: ['#FE4646', '#C60101', ' #FE8686', '#FEDCDC', '#E2E1E1']
+
 });
 
 // Elemento de la librería de Morris que trabaja con la gráfica de Donut/Queso.
@@ -178,7 +191,7 @@ var graphDonut =  new Morris.Donut({
       {label: "Benavides", value: 100},
       {label: "Corchu", value: 10}
   ],
-   colors: ['#006cff', '#5efc89', ' #d4b2ff', '#f5b2ff', '#fff6b2']
+   colors: ['#800000', '#FE4646', ' #FE8686', '#FEDCDC', '#E2E1E1']
  });
 
 // Por último, encontramos el método que hace todo posible, "setData". Este método que contiene

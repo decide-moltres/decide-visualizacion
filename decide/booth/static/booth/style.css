@@ -16,6 +16,7 @@
     height: 100%;
     display: table;
     float: left;
+    font-family: 'Montserrat';
 }
 
 .logo_container h1{
@@ -25,6 +26,7 @@
     vertical-align: middle;
     font-size:  32px;
     font-weight: 800;
+    font-family: 'Montserrat';
 
 }
 
@@ -58,6 +60,8 @@
     border-radius: 5px 5px 0 0;
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0,0,0,0.15);
+    font-family: 'Montserrat';
+
 }
 
 .content-table thead tr{
@@ -89,6 +93,30 @@ tr:hover {background-color: #f5f5f5;}
     border-bottom: 2px solid  #FE4646;
 }
 
+.btn {
+    border: 1px solid #FE4646;
+    background: none;
+    padding: 7px 14px;
+    font-size: 14px;
+    font-family: "Montserrat";
+    cursor: pointer;
+    margin: 10px;
+
+}
+
+.btn1:hover, .btn2:hover, .btn3:hover{
+    color: #FE4646;
+}
+
+.excel  {
+    color: #FE4646;;
+    font-family: "Montserrat";
+
+}
+
+
+
+
 
 
 
@@ -96,3 +124,5 @@ tr:hover {background-color: #f5f5f5;}
     margin-top: 20px;
     margin-left: 40px;
 }
+
+
