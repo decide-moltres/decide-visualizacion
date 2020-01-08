@@ -2,11 +2,6 @@
 {% load i18n static %}
 
 {% block extrahead %}
-    <link type="text/css" rel="stylesheet"
-         href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
-    <link type="text/css" rel="stylesheet"
-         href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css" />
-    <link type="text/css" rel="stylesheet" href="{% static 'booth/style.css' %}" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
@@ -22,6 +17,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.1/dist/html2canvas.min.js"></script>
+    <script src="http://connect.facebook.net/es_ES/all.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css" rel="stylesheet"/>
 {% endblock %}
 
@@ -58,6 +54,7 @@
                 </table>
             </div>
         </div>
+        <!-- Botón que comparte en Facebook -->
         <a title="Compartir en Facebook" id="facebook"><img src="https://cdn.icon-icons.com/icons2/1099/PNG/128/1485482214-facebook_78681.png" height="40" width="40"></a>
     </div>
 <!--Aquí se colocan los "div" en los que van insertados ambos tipos de gráficas-->
@@ -233,11 +230,14 @@ var graphDonut =  new Morris.Donut({
 </script>
 
 <script>
+    // Primero, llamamos al botón
     var facebookShareButton = document.getElementById('facebook');
-    var facebookShareButtonHref='http://www.facebook.com/sharer/sharer.php?';
-    facebookShareButtonHref += 'u='+document.URL;
-    facebookShareButtonHref += '&title='+document.title;
+    // Llamamos al link que nos permite compartir en Facebook
+    var facebookShareButtonHref='https://www.facebook.com/sharer/sharer.php?'
+    facebookShareButtonHref = facebookShareButtonHref + 'u='+document.URL;
+    facebookShareButtonHref = facebookShareButtonHref + '&quote='+document.title;
     facebookShareButton.href = facebookShareButtonHref;
+   
 </script>
 
 </body>
