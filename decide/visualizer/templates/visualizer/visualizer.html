@@ -40,18 +40,15 @@
     </div>
 
     <div id="app-visualizer">
-        <!-- Navbar -->
-        <b-navbar type="dark" variant="secondary">
-            <b-navbar-brand tag="h1">Decide</b-navbar-brand>
-        </b-navbar>
 
-        <div class="voting container">
-            <h1>[[ voting.id ]] - [[ voting.name ]]</h1>
+
+        <div class="voting-container">
+            <h1>  Votación [[ voting.id ]] - [[ voting.name ]]</h1>
 
             <h2 v-if="!voting.start_date">Votación no comenzada</h2>
             <h2 v-else-if="!voting.end_date">Votación en curso</h2>
             <div v-else>
-                <h2 class="heading">Resultados:</h2>
+
 
                 <div style="overflow-x:auto;">
                 <table style="margin: 0 auto;" class="content-table"  >
@@ -89,21 +86,31 @@
     </div>
 
     <br>
+    <br>
+    <br>
 <!--Aquí se colocan los "div" en los que van insertados ambos tipos de gráficas-->
-    <div id="graficaDonut" style="height: 250px;"></div>
+
+    <div id="container-graficas" style="vertical-align: middle">
+        <div id="graficaDonut" style="height: 250px; float:left; margin-left: 170px"></div>
+
+        <div id="graficaBarras" style="height: 250px; width: 500px; float:left"></div>
+    </div>
+
+    <br>
+    <br>
 
     <button class="btn btn1" id="graf1">Export this Chart to PNG</button>
 
-    <br>
-    <br>
 
-    <div id="graficaBarras" style="height: 250px;"></div>
     <button class="btn btn2" id="graf2">Export this Chart to PNG</button>
     <br>
     <br>
+    <br>
     <button class="btn btn3" id="save">Export this votation to PDF</button>
-    <a class="excel" href="excel"> Export this votation to excel</a>
 
+    <br>
+    <a class="excel" href="excel"> Export this votation to excel</a>
+    <br>
 
     <!-- Enlace para compartir en twitter -->
     <a title="Twittear" id="twitter-share-button-linuxito.com"><img width="40" height="40" src="https://www.caminandoelmundoblog.com/wp-content/uploads/2017/11/Twitter-Download-PNG.png"></img></a>
