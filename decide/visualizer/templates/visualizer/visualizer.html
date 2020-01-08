@@ -67,17 +67,19 @@
     <a href="excel"> Export this votation to excel</a>
     <button id="save">Export this votation to PDF</button>
 
+    <!-- Enlace para compartir en twitter -->
     <a title="Twittear" id="twitter-share-button-linuxito.com"><img width="40" height="40" src="https://www.caminandoelmundoblog.com/wp-content/uploads/2017/11/Twitter-Download-PNG.png"></img></a>
 {% endblock %}
 
 {% block extrabody %}
-
+<!-- Script que comparte en twitter la url en twitter -->
 <script>
 var twitterShareButton = document.getElementById('twitter-share-button-linuxito.com');
 var twitterShareButtonHref='https://twitter.com/share?';
 twitterShareButtonHref += 'url='+document.URL;
 twitterShareButtonHref += '&via=linuxitux';
-twitterShareButtonHref += '&text='+document.title+'Encuentra los resultado de las votaciones en nuestra pagina!';
+twitterShareButtonHref += '&text='+document.title+' Encuentra los resultado de las votaciones en nuestra pagina!'+
+' Accede a través del siguiente enlace!';
 twitterShareButton.href = twitterShareButtonHref;
 </script>
 
@@ -197,6 +199,26 @@ var graphDonut =  new Morris.Donut({
         doc.addImage(img, 'JPEG', 10, 10, w, h);
 
         doc.save('GraficaDonut.pdf');
+
+    }).catch(function(e) {
+        console.log(e.message);
+    });
+})
+</script>
+
+<script>
+    $("#graf2").click(function() {
+	html2canvas(document.getElementById('graficaBarras')).then(canvas => {
+        var w = document.getElementById("graficaBarras").offsetWidth;
+        var h = document.getElementById("graficaBarras").offsetHeight;
+
+        var img = canvas.toDataURL("image2/jpeg", 1);
+
+        var doc = new jsPDF('L', 'pt', [w, h]);
+
+        doc.addImage(img, 'JPEG', 10, 10, w, h);
+
+        doc.save('GraficaBarras.pdf');
 
     }).catch(function(e) {
         console.log(e.message);
