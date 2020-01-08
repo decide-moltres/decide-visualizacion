@@ -234,8 +234,12 @@ var graphDonut =  new Morris.Donut({
     var facebookShareButton = document.getElementById('facebook');
     // Llamamos al link que nos permite compartir en Facebook
     var facebookShareButtonHref='https://www.facebook.com/sharer/sharer.php?'
+    // Añadimos la URL de la página que queremos compartir, en este caso, la actual de este documento
+    // NOTA: Una URL que contenga localhost no funciona, ya que entra en conflicto con los entornos locales del propio Facebook
     facebookShareButtonHref = facebookShareButtonHref + 'u='+document.URL;
+    // Añadimos el título de la página como título de la publicación a compartir en Facebook
     facebookShareButtonHref = facebookShareButtonHref + '&quote='+document.title;
+    // Se añade la URL completa
     facebookShareButton.href = facebookShareButtonHref;
    
 </script>
