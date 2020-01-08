@@ -26,6 +26,7 @@
 {% endblock %}
 
 {% block content %}
+<body>
     <div id="app-visualizer">
         <!-- Navbar -->
         <b-navbar type="dark" variant="secondary">
@@ -66,9 +67,23 @@
     <button id="graf2">Export this Chart to PNG</button>
     <a href="excel"> Export this votation to excel</a>
     <button id="save">Export this votation to PDF</button>
+
+    <!-- Enlace para compartir en twitter -->
+    <a title="Twittear" id="twitter-share-button-linuxito.com"><img width="40" height="40" src="https://www.caminandoelmundoblog.com/wp-content/uploads/2017/11/Twitter-Download-PNG.png"></img></a>
 {% endblock %}
 
 {% block extrabody %}
+<!-- Script que comparte en twitter la url en twitter -->
+<script>
+var twitterShareButton = document.getElementById('twitter-share-button-linuxito.com');
+var twitterShareButtonHref='https://twitter.com/share?';
+twitterShareButtonHref += 'url='+document.URL;
+twitterShareButtonHref += '&via=linuxitux';
+twitterShareButtonHref += '&text='+document.title+' Encuentra los resultado de las votaciones en nuestra pagina!'+
+' Accede a través del siguiente enlace!';
+twitterShareButton.href = twitterShareButtonHref;
+</script>
+
     <!-- Vuejs -->
     <script src="https://unpkg.com/vue"></script>
     <script src="https://unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
