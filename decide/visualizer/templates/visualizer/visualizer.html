@@ -68,18 +68,36 @@
 
     <!-- Enlace para compartir en twitter -->
     <a title="Twittear" id="twitter-share-button-linuxito.com"><img width="40" height="40" src="https://www.caminandoelmundoblog.com/wp-content/uploads/2017/11/Twitter-Download-PNG.png"></img></a>
+    <!-- Enlace para compartir en tumblr -->
+    <a title="Tumblr" id="tumblr-share-button-linuxito.com"><img width="40" height="40" src="https://miro.medium.com/max/450/1*dh98kywL_OR71I7bJ2NCfQ.jpeg"></img></a>
 {% endblock %}
 
 {% block extrabody %}
+
 <!-- Script que comparte en twitter la url en twitter -->
 <script>
-var twitterShareButton = document.getElementById('twitter-share-button-linuxito.com');
-var twitterShareButtonHref='https://twitter.com/share?';
-twitterShareButtonHref += 'url='+document.URL;
-twitterShareButtonHref += '&via=linuxitux';
-twitterShareButtonHref += '&text='+document.title+' Encuentra los resultado de las votaciones en nuestra pagina!'+
-' Accede a través del siguiente enlace!';
-twitterShareButton.href = twitterShareButtonHref;
+
+    var twitterShareButton = document.getElementById('twitter-share-button-linuxito.com');
+    var twitterShareButtonHref='https://twitter.com/share?';
+    twitterShareButtonHref += 'url='+document.URL;
+    twitterShareButtonHref += '&via=linuxitux';
+    twitterShareButtonHref += '&text='+document.title+' Encuentra los resultado de las votaciones en nuestra pagina!'+
+    ' Accede a través del siguiente enlace!';
+    twitterShareButton.href = twitterShareButtonHref;
+
+</script>
+
+<!-- Script que comparte en tumblr la url de decide!-->
+<script>
+
+    var tumblrShareButton = document.getElementById('tumblr-share-button-linuxito.com');
+    var tumblrShareButtonHref='http://www.reddit.com/submit?';
+    tumblrShareButtonHref += 'url='+document.URL + ' Desde este enlace puedes acceder a los resultados!';
+    tumblrShareButtonHref += '&via=linuxitux';
+    tumblrShareButtonHref += '&title='+document.title+' Encuentra los resultado de las votaciones en nuestra pagina!'+
+    ' Accede a través del siguiente enlace!';
+    tumblrShareButton.href = tumblrShareButtonHref;
+
 </script>
 
     <!-- Vuejs -->
