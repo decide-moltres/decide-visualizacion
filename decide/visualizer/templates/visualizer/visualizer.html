@@ -87,31 +87,18 @@
                         </tr>
                     </thead>
                     <tbody>
-
-                            <th>Benavides</th>
-                            <td>20</td>
-                            <td>20</td>
-                    </tbody>
-                    <tbody>
-                            <th>Trinidad</th>
-                            <td>100</td>
-                            <td>100</td>
-
-                    </tbody>
-
-                     <tbody>
-                            <th>Corchuelo</th>
-                            <td>200</td>
-                            <td>200</td>
-
+                        <tr v-for="opt in voting.postproc" :key="opt.number">
+                            <th>[[opt.option]]</th>
+                            <td>[[opt.postproc]]</td>
+                            <td class="text-muted">[[opt.votes]]</td>
+                        </tr>
                     </tbody>
 
                 </table>
                 </div>
             </div>
         </div>
-        <!-- Botón que comparte en Facebook -->
-        <a title="Compartir en Facebook" id="facebook"><img src="https://cdn.icon-icons.com/icons2/1099/PNG/128/1485482214-facebook_78681.png" height="40" width="40"></a>
+
     </div>
 
     <br>
@@ -136,9 +123,6 @@
     <br>
     <br>
 
-    <a title="Twittear"  style=" margin-left:50px;" id="twitter-share-button-linuxito.com"><img width="40" height="40" src="https://www.caminandoelmundoblog.com/wp-content/uploads/2017/11/Twitter-Download-PNG.png"></img></a>
-
-
     <button class="btn btn3" id="save">Export this votation to PDF</button>
 
     <a class="excel" href="excel"> Export this votation to excel</a>
@@ -151,6 +135,9 @@
     <a title="Twittear" id="twitter-share-button-linuxito.com"><img width="40" height="40" src="https://www.caminandoelmundoblog.com/wp-content/uploads/2017/11/Twitter-Download-PNG.png"></img></a>
     <!-- Enlace para compartir en tumblr -->
     <a title="Tumblr" id="tumblr-share-button-linuxito.com"><img width="40" height="40" src="https://miro.medium.com/max/450/1*dh98kywL_OR71I7bJ2NCfQ.jpeg"></img></a>
+
+    <!-- Botón que comparte en Facebook -->
+    <a title="Compartir en Facebook" id="facebook"><img src="https://cdn.icon-icons.com/icons2/1099/PNG/128/1485482214-facebook_78681.png" height="40" width="40"></a>
 
 {% endblock %}
 
@@ -230,9 +217,7 @@ function extraerDatos(a) {
 var graphBar = new Morris.Bar({
   element: 'graficaBarras',
   data: [
-      {label: "Trinidad", value: 20},
-      {label: "Benavides", value: 100},
-      {label: "Corchu", value: 10}
+      {label: "Ejemplo", value: 0}
   ],
   xkey: 'label',
   ykeys: ['value'],
@@ -246,11 +231,9 @@ var graphBar = new Morris.Bar({
 // "data" : donde insertamos un dato de ejemplo, ya que es indispensable para garantizar
 // "colors": Un array donde añadimos el nombre de los colores que deseamos que se usen en la gráfica
 var graphDonut =  new Morris.Donut({
-   element: 'graficaDonut',
+    element: 'graficaDonut',
    data: [
-      {label: "Trinidad", value: 20},
-      {label: "Benavides", value: 100},
-      {label: "Corchu", value: 10}
+     { label: "Ejemplo", value: 0 }
   ],
    colors: ['#800000', '#FE4646', ' #FE8686', '#FEDCDC', '#E2E1E1']
  });
@@ -259,8 +242,8 @@ var graphDonut =  new Morris.Donut({
 // la librería de Morris nos facilita la actualización de los "data" de ambas gráficas. En este caso
 // añadimos nuestro método de extraer datos y le indicamos que lo haga con el número de resultados provenientes
 // del postprocesado.
-//graphBar.setData(extraerDatos(voting.postproc.length))
-//graphDonut.setData(extraerDatos(voting.postproc.length))
+graphBar.setData(extraerDatos(voting.postproc.length))
+graphDonut.setData(extraerDatos(voting.postproc.length))
     </script>
 
     <script>
