@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load i18n static %}
+
+{% block extrahead %}
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,800" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="{% static 'booth/contact.css' %}" />
+{% endblock %}
+
+{% block content %}
+<body>
+
+    <div class="header">
+        <div class="inner_header">
+            <div class="logo_container">
+                <h1> DECIDE </h1>
+            </div>
+        </div>
+    </div>
+
+<button onclick="window.history.go(-1);">Atrás</button>
+
+{% endblock %}
+
+{% block extrabody %}
+<footer>
+
+    <div class="container-footer-all">
+        <div class="container-body">
+
+            <div class="colum1">
+                <h1> Más información de la plataforma </h1>
+
+                <p> El objetivo de este proyecto es implementar una plataforma de voto electrónico seguro,
+                    que cumpla una serie de garantías básicas, como la anonimicidad y el secreto del voto.
+                    Se trata de un proyecto educativo, pensado para el estudio de sistemas de votación,
+                    por lo que prima la simplicidad por encima de la eficiencia cuando sea posible.
+                    Por lo tanto se asumen algunas carencias para permitir que sea entendible y extensible.
+
+            </div>
+
+            <div class="colum2">
+                <h1> Información de contacto</h1>
+                <div class="row1">
+                    <i class="fa fa-home" style="font-size:25px;color:white"></i>
+                    <label> Escuela Técnica Superior de Ingeniería Informática, Universidad de Sevilla, 41012 Sevilla</label>
+                </div>
+
+                <div class="row2">
+                    <i class="fa fa-envelope" style="font-size:20px;color:white"></i>
+                    <label> decide-visualizacion-moltres@gmail.com</label>
+                </div>
+
+                <div class="row3">
+                    <i class="fa fa-internet-explorer" style="font-size:20px;color:white"></i>
+                    <label> https://1984.lsi.us.es/wiki-egc </label>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="container-footer">
+
+                <div class="copyright">
+                    © Todos los derechos reservados
+                </div>
+        </div>
+
+    </div>
+</footer>
+
+</body>
+{% endblock %}

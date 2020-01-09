@@ -22,6 +22,12 @@ class VisualizerView(TemplateView):
 
         return context
 
+class ContactUs(TemplateView):
+    try:
+        template_name = 'visualizer/contactUs.html'
+    except:
+        raise Http404
+
 def export_users_xls(request, voting_id):
     response = HttpResponse(content_type='application/ms-excel')
     response['Content-Disposition'] = 'attachment; filename="Votacion.xls"'

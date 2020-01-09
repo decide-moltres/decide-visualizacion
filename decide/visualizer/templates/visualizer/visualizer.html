@@ -37,7 +37,7 @@
 
             <ul class="navigation">
                 <a><li>Quienes somos</li></a>
-                <a><li>Contacto</li></a>
+                <a onclick="window.location.href=getURL();"><li>Contacto</li></a>
 
             </ul>
         </div>
@@ -142,6 +142,18 @@
 {% endblock %}
 
 {% block extrabody %}
+
+<script>
+    
+    function getURL() {
+        var url = document.location.href; 
+        partes = url.split('/');
+        var page = partes[partes.length-2];
+        var newURL = url.replace(page,"contactUs")
+        return newURL
+    }
+    
+    </script>
 
 <!-- Script que comparte en twitter la url en twitter -->
 <script>
