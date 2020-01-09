@@ -35,6 +35,10 @@ body.dark{
     color: white;
 }
 
+button.dark{
+    color:white;
+}
+
 
 .switch ul{
     position: absolute;
@@ -220,7 +224,6 @@ footer {
 
 .row1 label, .row2 label, .row3 label{
     margin-top: 10px;
-    margin-left: 20px;
     max-width: 150px;
     font-size: 14px;
     font-family:"Montserrat";

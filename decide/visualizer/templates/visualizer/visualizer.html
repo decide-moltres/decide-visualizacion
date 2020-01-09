@@ -5,6 +5,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,800" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="{% static 'booth/style.css' %}" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
@@ -58,7 +59,7 @@
             $('ul').click(function(){
                 $('ul').toggleClass('active')
                 $('body').toggleClass('dark')
-                $('section').toggleClass('dark')
+                $('button').toggleClass('dark')
            })
         })
      </script>
@@ -346,18 +347,19 @@ var graphDonut =  new Morris.Donut({
             <div class="colum2">
                 <h1> Información de contacto</h1>
                 <div class="row1">
+                    <i class="fa fa-home" style="font-size:25px;color:white"></i>
                     <label> Escuela Técnica Superior de Ingeniería Informática, Universidad de Sevilla, 41012 Sevilla</label>
-                </div>>
+                </div>
 
                 <div class="row2">
-
+                    <i class="fa fa-envelope" style="font-size:20px;color:white"></i>
                     <label> decide-visualizacion-moltres@gmail.com</label>
-                </div>>
+                </div>
 
                 <div class="row3">
-
+                    <i class="fa fa-internet-explorer" style="font-size:20px;color:white"></i>
                     <label> https://1984.lsi.us.es/wiki-egc </label>
-                </div>>
+                </div>
 
             </div>
 
