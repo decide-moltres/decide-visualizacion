@@ -25,6 +25,7 @@
 {% block content %}
 <body>
 
+<section>
     <div class="header">
         <div class="inner_header">
             <div class="logo_container">
@@ -38,6 +39,29 @@
             </ul>
         </div>
     </div>
+</section>
+
+    <div class="switch">
+
+        <ul>
+            <li>
+                <span>Dark</span>
+                <span>Light</span>
+
+            </li>
+        </ul>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('ul').click(function(){
+                $('ul').toggleClass('active')
+                $('body').toggleClass('dark')
+                $('section').toggleClass('dark')
+           })
+        })
+     </script>
 
     <div id="app-visualizer">
 
@@ -103,17 +127,21 @@
 
 
     <button class="btn btn2" id="graf2">Export this Chart to PNG</button>
+
     <br>
     <br>
-    <br>
+
+    <a title="Twittear"  style=" margin-left:50px;" id="twitter-share-button-linuxito.com"><img width="40" height="40" src="https://www.caminandoelmundoblog.com/wp-content/uploads/2017/11/Twitter-Download-PNG.png"></img></a>
+
+
     <button class="btn btn3" id="save">Export this votation to PDF</button>
 
-    <br>
     <a class="excel" href="excel"> Export this votation to excel</a>
-    <br>
+
+
+
 
     <!-- Enlace para compartir en twitter -->
-    <a title="Twittear" id="twitter-share-button-linuxito.com"><img width="40" height="40" src="https://www.caminandoelmundoblog.com/wp-content/uploads/2017/11/Twitter-Download-PNG.png"></img></a>
 {% endblock %}
 
 {% block extrabody %}
@@ -297,6 +325,8 @@ var graphDonut =  new Morris.Donut({
 })
 </script>
 
+
+
 <footer>
 
     <div class="container-footer-all">
@@ -343,6 +373,7 @@ var graphDonut =  new Morris.Donut({
     </div>
 </footer>
 
+</body>
 
 </body>
 {% endblock %}
