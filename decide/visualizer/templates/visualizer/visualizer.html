@@ -3,6 +3,7 @@
 
 {% block extrahead %}
 
+    <meta name="viewport" content="width=devide-width", initial-scale="1.0">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,800" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="{% static 'booth/style.css' %}" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
@@ -28,21 +29,21 @@
 {% block content %}
 <body>
 
-<section>
+
     <div class="header">
         <div class="inner_header">
             <div class="logo_container">
                 <h1> DECIDE </h1>
             </div>
-
             <ul class="navigation">
                 <a><li>Quienes somos</li></a>
                 <a><li>Contacto</li></a>
 
             </ul>
         </div>
+
     </div>
-</section>
+
 
     <div class="switch">
 
@@ -54,6 +55,7 @@
             </li>
         </ul>
     </div>
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script type="text/javascript">
@@ -397,6 +399,7 @@ graphDonut.setData(extraerDatos(voting.postproc.length))
 </footer>
 
 </body>
+
 
 
 

@@ -1,7 +1,8 @@
 .header{
     width: 100%;
     height: 80px;
-    display: block;
+    display: flex;
+    justify-content: flex-start;
     background-color: #202020;
 }
 
@@ -31,7 +32,7 @@
 }
 
 body.dark{
-    background: #262626;
+    background: #424242;
     color: white;
 }
 
@@ -43,7 +44,7 @@ button.dark{
 .switch ul{
     position: absolute;
     top:  45px;
-    right: 20px;
+    right: 50px;
     margin: 0;
     padding: 0;
     width: 100px;
@@ -82,6 +83,9 @@ button.dark{
 .navigation{
     float: right;
     height: 100%;
+    display: flex;
+    justify-content: flex-start;
+
 }
 
 .navigation a{
@@ -89,6 +93,7 @@ button.dark{
     display: table;
     float: left;
     padding: 0px 20px;
+
 }
 
 .navigation a li{
@@ -97,6 +102,7 @@ button.dark{
     height: 100%;
     color: white;
     font-size: 16px;
+
 }
 
 .content-table{
@@ -224,6 +230,7 @@ footer {
 
 .row1 label, .row2 label, .row3 label{
     margin-top: 10px;
+    margin-bottom: 50px;
     max-width: 150px;
     font-size: 14px;
     font-family:"Montserrat";
@@ -257,8 +264,22 @@ footer {
     }
 
     .colum2{
-
         margin-top: 40px;
+    }
+
+    .header{
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .navigation{
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .voting-container h1{
+        display: flex;
+        justify-content: flex-start;
     }
 }
 
@@ -280,11 +301,17 @@ footer {
     margin-bottom: 50px
     font-size:  32px;
     font-weight: 500;
+    display: flex;
+    justify-content: flex-start;
 
 }
 
 .voting {
     margin-top: 20px;
     margin-left: 40px;
+}
+
+@media screen and (max-width: 330px){
+    body{font-size: 12px;}
 }
 
