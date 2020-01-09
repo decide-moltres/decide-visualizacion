@@ -2,7 +2,11 @@
 {% load i18n static %}
 
 {% block extrahead %}
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,800" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="{% static 'booth/style.css' %}" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
@@ -23,21 +27,58 @@
 
 {% block content %}
 <body>
-    <div id="app-visualizer">
-        <!-- Navbar -->
-        <b-navbar type="dark" variant="secondary">
-            <b-navbar-brand tag="h1">Decide</b-navbar-brand>
-        </b-navbar>
 
-        <div class="voting container">
-            <h1>[[ voting.id ]] - [[ voting.name ]]</h1>
+<section>
+    <div class="header">
+        <div class="inner_header">
+            <div class="logo_container">
+                <h1> DECIDE </h1>
+            </div>
+
+            <ul class="navigation">
+                <a><li>Quienes somos</li></a>
+                <a><li>Contacto</li></a>
+
+            </ul>
+        </div>
+    </div>
+</section>
+
+    <div class="switch">
+
+        <ul>
+            <li>
+                <span>Dark</span>
+                <span>Light</span>
+
+            </li>
+        </ul>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('ul').click(function(){
+                $('ul').toggleClass('active')
+                $('body').toggleClass('dark')
+                $('button').toggleClass('dark')
+           })
+        })
+     </script>
+
+    <div id="app-visualizer">
+
+
+        <div class="voting-container">
+            <h1>  Votación [[ voting.id ]] - [[ voting.name ]]</h1>
 
             <h2 v-if="!voting.start_date">Votación no comenzada</h2>
             <h2 v-else-if="!voting.end_date">Votación en curso</h2>
             <div v-else>
-                <h2 class="heading">Resultados:</h2>
 
-                <table class="table table-bordered table-striped">
+
+                <div style="overflow-x:auto;">
+                <table style="margin: 0 auto;" class="content-table"  >
                     <thead>
                         <tr>
                             <th>Opción</th>
@@ -46,30 +87,71 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="opt in voting.postproc" :key="opt.number">
-                            <th>[[opt.option]]</th>
-                            <td>[[opt.postproc]]</td>
-                            <td class="text-muted">[[opt.votes]]</td>
-                        </tr>
+
+                            <th>Benavides</th>
+                            <td>20</td>
+                            <td>20</td>
                     </tbody>
+                    <tbody>
+                            <th>Trinidad</th>
+                            <td>100</td>
+                            <td>100</td>
+
+                    </tbody>
+
+                     <tbody>
+                            <th>Corchuelo</th>
+                            <td>200</td>
+                            <td>200</td>
+
+                    </tbody>
+
                 </table>
+                </div>
             </div>
         </div>
         <!-- Botón que comparte en Facebook -->
         <a title="Compartir en Facebook" id="facebook"><img src="https://cdn.icon-icons.com/icons2/1099/PNG/128/1485482214-facebook_78681.png" height="40" width="40"></a>
     </div>
+
+    <br>
+    <br>
+    <br>
 <!--Aquí se colocan los "div" en los que van insertados ambos tipos de gráficas-->
-    <div id="graficaDonut" style="height: 250px;"></div>   
-    <button id="graf1">Export this Chart to PNG</button>
-    <div id="graficaBarras" style="height: 250px;"></div>
-    <button id="graf2">Export this Chart to PNG</button>
-    <a href="excel"> Export this votation to excel</a>
-    <button id="save">Export this votation to PDF</button>
+
+    <div id="container-graficas" style="vertical-align: middle">
+        <div id="graficaDonut" style="height: 250px; float:left; margin-left: 170px"></div>
+
+        <div id="graficaBarras" style="height: 250px; width: 500px; float:left"></div>
+    </div>
+
+    <br>
+    <br>
+
+    <button class="btn btn1" id="graf1">Export this Chart to PNG</button>
+
+
+    <button class="btn btn2" id="graf2">Export this Chart to PNG</button>
+
+    <br>
+    <br>
+
+    <a title="Twittear"  style=" margin-left:50px;" id="twitter-share-button-linuxito.com"><img width="40" height="40" src="https://www.caminandoelmundoblog.com/wp-content/uploads/2017/11/Twitter-Download-PNG.png"></img></a>
+
+
+    <button class="btn btn3" id="save">Export this votation to PDF</button>
+
+    <a class="excel" href="excel"> Export this votation to excel</a>
+
+
+
 
     <!-- Enlace para compartir en twitter -->
+
     <a title="Twittear" id="twitter-share-button-linuxito.com"><img width="40" height="40" src="https://www.caminandoelmundoblog.com/wp-content/uploads/2017/11/Twitter-Download-PNG.png"></img></a>
     <!-- Enlace para compartir en tumblr -->
     <a title="Tumblr" id="tumblr-share-button-linuxito.com"><img width="40" height="40" src="https://miro.medium.com/max/450/1*dh98kywL_OR71I7bJ2NCfQ.jpeg"></img></a>
+
 {% endblock %}
 
 {% block extrabody %}
@@ -144,14 +226,19 @@ function extraerDatos(a) {
 // la creación correcta de la gráfica
 // "xkey": Indica el nombre de los elementos situados en el eje X
 // "ykey": Indica, en un array, el nombre de los elementos situados en el eje Y
+
 var graphBar = new Morris.Bar({
   element: 'graficaBarras',
   data: [
-      {label: "Ejemplo", value: 0}
+      {label: "Trinidad", value: 20},
+      {label: "Benavides", value: 100},
+      {label: "Corchu", value: 10}
   ],
   xkey: 'label',
   ykeys: ['value'],
-  labels: ['Votos']
+  labels: ['Votos'],
+  barColors: ['#FE4646', '#C60101', ' #FE8686', '#FEDCDC', '#E2E1E1']
+
 });
 
 // Elemento de la librería de Morris que trabaja con la gráfica de Donut/Queso.
@@ -161,17 +248,19 @@ var graphBar = new Morris.Bar({
 var graphDonut =  new Morris.Donut({
    element: 'graficaDonut',
    data: [
-     { label: "Ejemplo", value: 0 }
-   ],
-   colors: ['#006cff', '#5efc89', ' #d4b2ff', '#f5b2ff', '#fff6b2']
+      {label: "Trinidad", value: 20},
+      {label: "Benavides", value: 100},
+      {label: "Corchu", value: 10}
+  ],
+   colors: ['#800000', '#FE4646', ' #FE8686', '#FEDCDC', '#E2E1E1']
  });
 
 // Por último, encontramos el método que hace todo posible, "setData". Este método que contiene
 // la librería de Morris nos facilita la actualización de los "data" de ambas gráficas. En este caso
 // añadimos nuestro método de extraer datos y le indicamos que lo haga con el número de resultados provenientes
 // del postprocesado.
- graphBar.setData(extraerDatos(voting.postproc.length))
- graphDonut.setData(extraerDatos(voting.postproc.length))
+//graphBar.setData(extraerDatos(voting.postproc.length))
+//graphDonut.setData(extraerDatos(voting.postproc.length))
     </script>
 
     <script>
@@ -276,6 +365,58 @@ var graphDonut =  new Morris.Donut({
     facebookShareButton.href = facebookShareButtonHref;
    
 </script>
+
+<footer>
+
+    <div class="container-footer-all">
+        <div class="container-body">
+
+            <div class="colum1">
+                <h1> Más información de la plataforma </h1>
+
+                <p> El objetivo de este proyecto es implementar una plataforma de voto electrónico seguro,
+                    que cumpla una serie de garantías básicas, como la anonimicidad y el secreto del voto.
+                    Se trata de un proyecto educativo, pensado para el estudio de sistemas de votación,
+                    por lo que prima la simplicidad por encima de la eficiencia cuando sea posible.
+                    Por lo tanto se asumen algunas carencias para permitir que sea entendible y extensible.
+
+            </div>
+
+            <div class="colum2">
+                <h1> Información de contacto</h1>
+                <div class="row1">
+                    <i class="fa fa-home" style="font-size:25px;color:white"></i>
+                    <label> Escuela Técnica Superior de Ingeniería Informática, Universidad de Sevilla, 41012 Sevilla</label>
+                </div>
+
+                <div class="row2">
+                    <i class="fa fa-envelope" style="font-size:20px;color:white"></i>
+                    <label> decide-visualizacion-moltres@gmail.com</label>
+                </div>
+
+                <div class="row3">
+                    <i class="fa fa-internet-explorer" style="font-size:20px;color:white"></i>
+                    <label> https://1984.lsi.us.es/wiki-egc </label>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="container-footer">
+
+                <div class="copyright">
+                    © Todos los derechos reservados
+                </div>
+        </div>
+
+    </div>
+</footer>
+
+</body>
+
+
+
 
 </body>
 {% endblock %}
