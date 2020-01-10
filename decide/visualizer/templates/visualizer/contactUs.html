@@ -3,7 +3,7 @@
 
 {% block extrahead %}
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,800" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="{% static 'booth/contact.css' %}" />
+    <link type="text/css" rel="stylesheet" href="{% static 'booth/contactUs.css' %}" />
 {% endblock %}
 
 {% block content %}
@@ -17,34 +17,93 @@
         </div>
     </div>
 
-<button onclick="window.history.go(-1);">Atrás</button>
+<button class=button onclick="window.history.go(-1);">Atrás</button>
 
 {% endblock %}
 
 {% block extrabody %}
+<body>
+    <div class="body">
+    <h1> ¡Contáctanos!</h1>
+
+    <p> La plataforma Decide ha sido desarrollada por la empresa wadobo, y modificada por el equipo de Decide-Moltres.</p>
+    <p> Decide-Moltres cuenta con una serie de módulos de trabajo, como el módulo de Cabina, Votación, Auth, Visualización... </p>
+    <p> Si desea comunicarse con nosotros, a continuación se le muestran los contactos de los miembros del equipo de Visualización:</p>
+    <div class=table>
+    <table class=contact>
+        <tr>
+            <th>
+                Integrantes
+            </th>
+            <th>
+                Correos electrónicos
+            </th>
+        </tr>
+        <tr>
+            <td>
+            Ezequiel Portillo Jurado 
+            </td>
+            <td class=correo>
+            <a href=""><img onclick="window.open('mailto:ezeporjur@alum.us.es?subject=Decide!&body=Querido Ezequiel: Soy _______ y le escribo este correo con motivo:');" 
+                src="https://images.vexels.com/media/users/3/130187/isolated/preview/5e8d2205ecc8cde3235581fc5ecfa430-icono-de-esquema-de-correo-electr--nico-by-vexels.png" height="20" width="20"></a><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Belén Garrido López
+            </td>
+            <td class=correo>
+            <a href=""><img onclick="window.open('mailto:belgarlop3@alum.us.es?subject=Decide!&body=Querida Belén: Soy _______ y le escribo este correo con motivo:');" 
+                src="https://images.vexels.com/media/users/3/130187/isolated/preview/5e8d2205ecc8cde3235581fc5ecfa430-icono-de-esquema-de-correo-electr--nico-by-vexels.png" height="20" width="20"></a><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Marta Dorante Cardoso  
+            </td> 
+            <td class=correo>
+            <a href=""><img onclick="window.open('mailto:mardorcar@alum.us.es?subject=Decide!&body=Querida Marta: Soy _______ y le escribo este correo con motivo:');" 
+                src="https://images.vexels.com/media/users/3/130187/isolated/preview/5e8d2205ecc8cde3235581fc5ecfa430-icono-de-esquema-de-correo-electr--nico-by-vexels.png" height="20" width="20"></a><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                María de Gracia Piñero Pastor  
+            </td>
+            <td class=correo>
+            <a href=""><img onclick="window.open('mailto:marpinpas@alum.us.es?subject=Decide!&body=Querida María de Gracia: Soy _______ y le escribo este correo con motivo:');" 
+                src="https://images.vexels.com/media/users/3/130187/isolated/preview/5e8d2205ecc8cde3235581fc5ecfa430-icono-de-esquema-de-correo-electr--nico-by-vexels.png" height="20" width="20"></a><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Alejandro Rodríguez Díaz 
+            </td>
+            <td class=correo>
+            <a href=""><img onclick="window.open('mailto:aleroddia1@alum.us.es?subject=Decide!&body=Querido Alejandro: Soy _______ y le escribo este correo con motivo:');"
+                src="https://images.vexels.com/media/users/3/130187/isolated/preview/5e8d2205ecc8cde3235581fc5ecfa430-icono-de-esquema-de-correo-electr--nico-by-vexels.png" height="20" width="20"></a><br>
+            </td>
+        </tr>
+    </table>
+    </div>
+    <p> En caso de algún tipo de duda, o sugerencia, o si tal vez encuentra algún fallo, no dude en ponerse en contacto con nosotros.</p>
+    <p> Trataremos de solucionarlo de la mejor manera posible. ¡Gracias!</p>
+    </div>
+
+</body>
 <footer>
 
     <div class="container-footer-all">
         <div class="container-body">
 
             <div class="colum1">
-                <h1> ¡Contáctanos!</h1>
+                <h1> Más información de la plataforma </h1>
 
-                <p> La plataforma Decide ha sido desarrollada por la empresa wadobo, y modificada por el equipo de Decide-Moltres.</p>
-                <p> Decide-Moltres cuenta con una serie de módulos de trabajo, como el módulo de Cabina, Votación, Auth, Visualización... </p>
-                <p> Si desea comunicarse con nosotros, a continuación se le muestran los contactos de los miembros del equipo de Visualización:</p>
-                Ezequiel Portillo Jurado <a href=""><img onclick="window.open('mailto:ezeporjur@alum.us.es?subject=Decide!&body=Querido Ezequiel: Soy _______ y le escribo este correo con motivo:');" 
-                    src="https://images.vexels.com/media/users/3/130187/isolated/preview/5e8d2205ecc8cde3235581fc5ecfa430-icono-de-esquema-de-correo-electr--nico-by-vexels.png" height="20" width="20"></a><br>
-                Belén Garrido López <a href=""><img onclick="window.open('mailto:belgarlop3@alum.us.es?subject=Decide!&body=Querida Belén: Soy _______ y le escribo este correo con motivo:');" 
-                    src="https://images.vexels.com/media/users/3/130187/isolated/preview/5e8d2205ecc8cde3235581fc5ecfa430-icono-de-esquema-de-correo-electr--nico-by-vexels.png" height="20" width="20"></a><br>
-                Marta Dorante Cardoso  <a href=""><img onclick="window.open('mailto:mardorcar@alum.us.es?subject=Decide!&body=Querida Marta: Soy _______ y le escribo este correo con motivo:');" 
-                    src="https://images.vexels.com/media/users/3/130187/isolated/preview/5e8d2205ecc8cde3235581fc5ecfa430-icono-de-esquema-de-correo-electr--nico-by-vexels.png" height="20" width="20"></a><br>
-                María de Gracia Piñero Pastor  <a href=""><img onclick="window.open('mailto:marpinpas@alum.us.es?subject=Decide!&body=Querida María de Gracia: Soy _______ y le escribo este correo con motivo:');" 
-                    src="https://images.vexels.com/media/users/3/130187/isolated/preview/5e8d2205ecc8cde3235581fc5ecfa430-icono-de-esquema-de-correo-electr--nico-by-vexels.png" height="20" width="20"></a><br>
-                Alejandro Rodríguez Díaz  <a href=""><img onclick="window.open('mailto:aleroddia1@alum.us.es?subject=Decide!&body=Querido Alejandro: Soy _______ y le escribo este correo con motivo:');"
-                    src="https://images.vexels.com/media/users/3/130187/isolated/preview/5e8d2205ecc8cde3235581fc5ecfa430-icono-de-esquema-de-correo-electr--nico-by-vexels.png" height="20" width="20"></a><br>
-                <p> En caso de algún tipo de duda, o sugerencia, o si tal vez encuentra algún fallo, no dude en ponerse en contacto con nosotros.</p>
-                <p> Trataremos de solucionarlo de la mejor manera posible. ¡Gracias!</p>
+                <p> El objetivo de este proyecto es implementar una plataforma de voto electrónico seguro,
+                    que cumpla una serie de garantías básicas, como la anonimicidad y el secreto del voto.
+                    Se trata de un proyecto educativo, pensado para el estudio de sistemas de votación,
+                    por lo que prima la simplicidad por encima de la eficiencia cuando sea posible.
+                    Por lo tanto se asumen algunas carencias para permitir que sea entendible y extensible.
 
             </div>
 
