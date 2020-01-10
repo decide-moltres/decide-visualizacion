@@ -28,13 +28,18 @@
         <div class="container-body">
 
             <div class="colum1">
-                <h1> Más información de la plataforma </h1>
+                <h1> ¡Contáctanos!</h1>
 
-                <p> El objetivo de este proyecto es implementar una plataforma de voto electrónico seguro,
-                    que cumpla una serie de garantías básicas, como la anonimicidad y el secreto del voto.
-                    Se trata de un proyecto educativo, pensado para el estudio de sistemas de votación,
-                    por lo que prima la simplicidad por encima de la eficiencia cuando sea posible.
-                    Por lo tanto se asumen algunas carencias para permitir que sea entendible y extensible.
+                <p> La plataforma Decide ha sido desarrollada por la empresa wadobo, y modificada por el equipo de Decide-Moltres.</p>
+                <p> Decide-Moltres cuenta con una serie de módulos de trabajo, como el módulo de Cabina, Votación, Auth, Visualización... </p>
+                <p> Si desea comunicarse con nosotros, a continuación se le muestran los contactos de los miembros del equipo de Visualización:</p>
+                Ezequiel Portillo Jurado <br>
+                Belén Garrido López <br>
+                Marta Dorante Cardoso  <br>
+                María de Gracia Piñero Pastor  <br>
+                Alejandro Rodríguez Díaz  <br>
+                <p> En caso de algún tipo de duda, o sugerencia, o si tal vez encuentra algún fallo, no dude en ponerse en contacto con nosotros.</p>
+                <p> Trataremos de solucionarlo de la mejor manera posible. ¡Gracias!</p>
 
             </div>
 
@@ -68,6 +73,13 @@
 
     </div>
 </footer>
+<script>
+function enviarCorreo () {
+    var thread = GmailApp.getInboxThreads(0,1)[0]; // get first thread in inbox
+    var message = thread.getMessages()[0]; // get first message
+    Logger.log(message.getFrom());
+}
 
+</script>
 </body>
 {% endblock %}
