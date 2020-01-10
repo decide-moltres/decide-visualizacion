@@ -22,3 +22,45 @@ class TestSignup(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class TestDarkMode(unittest.TestCase):
+
+    def setUp(self):
+        self.driver = webdriver.Firefox()
+        
+    def test_darkmode_fire(self):
+        self.driver.get("http://127.0.0.1:8000/admin/login/?next=/admin/")
+        self.driver.find_element_by_id('id_username').send_keys("practica")
+        self.driver.find_element_by_id('id_password').send_keys("practica")
+        self.driver.find_element_by_id('login-form').click()
+        self.driver.get("http://127.0.0.1:8000/visualizer/3/")
+        self.driver.find_element_by_id('switch-mode-dark').click()
+
+    def tearDown(self):
+        self.driver.quit
+
+
+class TestLightMode(unittest.TestCase):
+
+    def setUp(self):
+        self.driver = webdriver.Firefox()
+
+    def test_lightmode_fire(self):
+        self.driver.get("http://127.0.0.1:8000/admin/login/?next=/admin/")
+        self.driver.find_element_by_id('id_username').send_keys("practica")
+        self.driver.find_element_by_id('id_password').send_keys("practica")
+        self.driver.find_element_by_id('login-form').click()
+        self.driver.get("http://127.0.0.1:8000/visualizer/3/")
+        self.driver.find_element_by_id('switch-mode-dark').click()
+        self.driver.find_element_by_id('switch-mode-light').click()
+
+    def tearDown(self):
+        self.driver.quit
+
+
+
+
+
+
+

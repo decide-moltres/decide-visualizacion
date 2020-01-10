@@ -25,5 +25,3 @@ class DefVisualizer(TaskSet):
 class Visualizer(HttpLocust):
     host = HOST
     task_set = DefVisualizer
-
-
