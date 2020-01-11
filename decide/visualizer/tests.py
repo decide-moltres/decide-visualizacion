@@ -5,7 +5,7 @@ from django.test import TestCase
 import unittest
 from selenium import webdriver
 
-class TestSignup(unittest.TestCase):
+'''class TestSignup(unittest.TestCase):
 
     def setUp(self):
         self.driver = webdriver.Firefox()
@@ -106,7 +106,57 @@ class TestExportPNG2(unittest.TestCase):
     def tearDown(self):
         self.driver.quit
 
+class TestContactUs(unittest.TestCase):
 
+    def setUp(self):
+        self.driver = webdriver.Firefox()
+
+    def test_contactUs_fire(self):
+        self.driver.get("http://https://decide-moltres-visualizacion.herokuapp.com/admin/login/?next=/admin/")
+        self.driver.find_element_by_id('id_username').send_keys("visualizacion")
+        self.driver.find_element_by_id('id_password').send_keys("visualizacion")
+        self.driver.find_element_by_id('login-form').click()
+        self.driver.get("http://https://decide-moltres-visualizacion.herokuapp.com/visualizer/1/")
+        self.driver.find_element_by_id('contact').click()
+
+    def tearDown(self):
+        self.driver.quit
+
+class TestBackContactUs(unittest.TestCase):
+
+    def setUp(self):
+        self.driver = webdriver.Firefox()
+
+    def test_backContactUs_fire(self):
+        self.driver.get("http://https://decide-moltres-visualizacion.herokuapp.com/admin/login/?next=/admin/")
+        self.driver.find_element_by_id('id_username').send_keys("visualizacion")
+        self.driver.find_element_by_id('id_password').send_keys("visualizacion")
+        self.driver.find_element_by_id('login-form').click()
+        self.driver.get("http://https://decide-moltres-visualizacion.herokuapp.com/visualizer/1/")
+        self.driver.find_element_by_id('contact').click()
+        self.driver.get("http://https://decide-moltres-visualizacion.herokuapp.com/visualizer/contactUs/")
+        self.driver.find_element_by_id('back').click()
+
+    def tearDown(self):
+        self.driver.quit
+
+class TestSendEmail(unittest.TestCase):
+
+    def setUp(self):
+        self.driver = webdriver.Firefox()
+
+    def test_sendEmail_fire(self):
+        self.driver.get("http://https://decide-moltres-visualizacion.herokuapp.com/admin/login/?next=/admin/")
+        self.driver.find_element_by_id('id_username').send_keys("visualizacion")
+        self.driver.find_element_by_id('id_password').send_keys("visualizacion")
+        self.driver.find_element_by_id('login-form').click()
+        self.driver.get("http://https://decide-moltres-visualizacion.herokuapp.com/visualizer/1/")
+        self.driver.find_element_by_id('contact').click()
+        self.driver.get("http://https://decide-moltres-visualizacion.herokuapp.com/visualizer/contactUs/")
+        self.driver.find_element_by_id('correoEz').click()
+
+    def tearDown(self):
+        self.driver.quit'''
 
 
 
