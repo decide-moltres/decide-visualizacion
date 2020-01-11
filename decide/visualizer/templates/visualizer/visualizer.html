@@ -3,6 +3,7 @@
 
 {% block extrahead %}
 
+    <meta name="viewport" content="width=devide-width", initial-scale="1.0">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,800" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="{% static 'booth/style.css' %}" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
@@ -28,7 +29,7 @@
 {% block content %}
 <body>
 
-<section>
+
     <div class="header">
         <div class="inner_header">
 
@@ -45,15 +46,17 @@
                 <h1> DECIDE </h1>
                 
             </div>
-          
+
             <ul class="navigation">
                 <a><li>About Us</li></a>
-                <a><li>Contact</li></a>
+                <a onclick="window.location.href=getURL();"><li>Contact</li></a>
+
 
             </ul>
         </div>
+
     </div>
-</section>
+
 
     <a>
         <button  class="highcontrast">ALTO CONTRASTE</button>
@@ -76,12 +79,13 @@
 
         <ul>
             <li>
-                <span>Dark</span>
-                <span>Light</span>
+                <span id="switch-mode-dark">Dark</span>
+                <span id="switch-mode-light">Light</span>
 
             </li>
         </ul>
     </div>
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script type="text/javascript">
@@ -170,6 +174,18 @@
 {% endblock %}
 
 {% block extrabody %}
+
+<script>
+    
+    function getURL() {
+        var url = document.location.href; 
+        partes = url.split('/');
+        var page = partes[partes.length-2];
+        var newURL = url.replace(page,"contactUs")
+        return newURL
+    }
+    
+    </script>
 
 <!-- Script que comparte en twitter la url en twitter -->
 <script>
@@ -429,6 +445,7 @@ graphDonut.setData(extraerDatos(voting.postproc.length))
 </footer>
 
 </body>
+
 
 
 
