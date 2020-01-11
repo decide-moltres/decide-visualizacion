@@ -32,17 +32,47 @@
 
     <div class="header">
         <div class="inner_header">
-            <div class="logo_container">
-                <h1> DECIDE </h1>
+
+            <div class="moltres"
+                <h1>
+               <img src=https://vignette.wikia.nocookie.net/es.pokemon/images/0/01/Moltres.png/revision/latest?cb=20160316201747
+               width="100"
+               height="81">
+                </h1>
             </div>
+
+            <div class="logo_container">
+               
+                <h1> DECIDE </h1>
+                
+            </div>
+
             <ul class="navigation">
-                <a><li>Quienes somos</li></a>
-                <a onclick="window.location.href=getURL();"><li>Contacto</li></a>
+                <a><li>About Us</li></a>
+                <a onclick="window.location.href=getURL();"><li>Contact</li></a>
+
 
             </ul>
         </div>
 
     </div>
+
+
+    <a>
+        <button  class="highcontrast">ALTO CONTRASTE</button>
+    </a>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('a').click(function(){
+
+                $('button').toggleClass('active')
+                $('body').toggleClass('contrast')
+                $('highcontrast').toggleClass('contrast')
+                             
+            })
+        })
+    </script>
 
 
     <div class="switch">
@@ -66,7 +96,7 @@
                 $('button').toggleClass('dark')
            })
         })
-     </script>
+    </script>
 
     <div id="app-visualizer">
 
@@ -83,9 +113,9 @@
                 <table style="margin: 0 auto;" class="content-table"  >
                     <thead>
                         <tr>
-                            <th>Opción</th>
-                            <th>Puntuación</th>
-                            <th>Votos</th>
+                            <th>Option</th>
+                            <th>Score</th>
+                            <th>Votes</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -236,7 +266,7 @@ var graphBar = new Morris.Bar({
   xkey: 'label',
   ykeys: ['value'],
   labels: ['Votos'],
-  barColors: ['#FE4646', '#C60101', ' #FE8686', '#FEDCDC', '#E2E1E1']
+  barColors: ['#FF9933', '#FFc133', '#e4e722' , '#8d4000', '#857c5d']
 
 });
 
@@ -249,7 +279,7 @@ var graphDonut =  new Morris.Donut({
    data: [
      { label: "Ejemplo", value: 0 }
   ],
-   colors: ['#800000', '#FE4646', ' #FE8686', '#FEDCDC', '#E2E1E1']
+   colors: ['#FF9933', '#FFc133', '#e4e722' , '#8d4000', '#857c5d']
  });
 
 // Por último, encontramos el método que hace todo posible, "setData". Este método que contiene
@@ -369,18 +399,22 @@ graphDonut.setData(extraerDatos(voting.postproc.length))
         <div class="container-body">
 
             <div class="colum1">
-                <h1> Más información de la plataforma </h1>
+                <h1> More information about the plataform </h1>
 
-                <p> El objetivo de este proyecto es implementar una plataforma de voto electrónico seguro,
-                    que cumpla una serie de garantías básicas, como la anonimicidad y el secreto del voto.
-                    Se trata de un proyecto educativo, pensado para el estudio de sistemas de votación,
-                    por lo que prima la simplicidad por encima de la eficiencia cuando sea posible.
-                    Por lo tanto se asumen algunas carencias para permitir que sea entendible y extensible.
+                <p>  The objective of this project is to implement 
+                    a secure electronic voting platform,which complies
+                    with a series of basic guarantees, 
+                    such as anonymity and voting secrecy. 
+                    It is an educational project, designed to study voting 
+                    systems, so simplicity takes precedence over efficiency 
+                    whenever possible. Therefore, some shortcomings are
+                     ssumed to allow it to be understood and extended.
+                </p>
 
             </div>
 
             <div class="colum2">
-                <h1> Información de contacto</h1>
+                <h1> Contact Information</h1>
                 <div class="row1">
                     <i class="fa fa-home" style="font-size:25px;color:white"></i>
                     <label> Escuela Técnica Superior de Ingeniería Informática, Universidad de Sevilla, 41012 Sevilla</label>
@@ -403,7 +437,7 @@ graphDonut.setData(extraerDatos(voting.postproc.length))
         <div class="container-footer">
 
                 <div class="copyright">
-                    © Todos los derechos reservados
+                    © All rights reserved
                 </div>
         </div>
 

@@ -21,6 +21,12 @@
     font-family: 'Montserrat';
 }
 
+.moltres{
+    float: left;
+    left: 20px;
+
+}
+
 .logo_container h1{
     color: white;
     height:100%;
@@ -39,6 +45,28 @@ body.dark{
 button.dark{
     color:white;
 }
+
+.highcontrast{
+    position: absolute;
+    top:  45px;
+    right: 180px;
+    margin: 0;
+    padding: 0;
+    width: 180px;
+    height: 30px;
+    z-index: 1;
+    border: 1px solid #FFF;
+    background: #000;
+    color: #FFF;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+body.contrast {
+    background: #b6b4c5;
+    color: rgb(52, 28, 187);
+}
+
 
 
 .switch ul{
@@ -80,12 +108,12 @@ button.dark{
     background: white;
     color: #000;
 }
+
 .navigation{
     float: right;
     height: 100%;
     display: flex;
     justify-content: flex-start;
-
 }
 
 .navigation a{
@@ -120,11 +148,13 @@ button.dark{
 }
 
 .content-table thead tr{
-    background-color: #FE4646;
+    background-color: rgb(254, 205, 70);
     color:  #ffffff;
     text-align:center;
     font-weight: bold;
 }
+
+
 
 .content-table th{
     height: 40px;
@@ -145,11 +175,11 @@ tr:hover {background-color: #f5f5f5;}
 }
 
 .content-table tbody tr:last-of-type {
-    border-bottom: 2px solid  #FE4646;
+    border-bottom: 2px solid  rgb(254, 205, 70);
 }
 
 .btn {
-    border: 1px solid #FE4646;
+    border: 1px solid rgb(254, 205, 70);
     background: none;
     padding: 7px 14px;
     font-size: 14px;
@@ -170,11 +200,11 @@ tr:hover {background-color: #f5f5f5;}
 
 
 .btn1:hover, .btn2:hover, .btn3:hover{
-    color: #FE4646;
+    color: rgb(254, 205, 70);
 }
 
 .excel  {
-    color: #FE4646;;
+    color: rgb(254, 205, 70);
     font-family: "Montserrat";
 
 }
