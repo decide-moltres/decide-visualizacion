@@ -23,9 +23,11 @@
     <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.1/dist/html2canvas.min.js"></script>
     <script src="http://connect.facebook.net/es_ES/all.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css" rel="stylesheet"/>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 {% endblock %}
 
 {% block content %}
+
 <body>
 
 <section>
@@ -47,8 +49,8 @@
             </div>
           
             <ul class="navigation">
-                <a><li>About Us</li></a>
-                <a><li>Contact</li></a>
+                <a><li>{% trans "About Us" %}</li></a>
+                <a><li>{% trans "Contact" %}</li></a>
 
             </ul>
         </div>
@@ -56,7 +58,7 @@
 </section>
 
     <a>
-        <button  class="highcontrast">ALTO CONTRASTE</button>
+        <button  class="highcontrast">{% trans "High Contrast" %}</button>
     </a>
 
     <script type="text/javascript">
@@ -76,14 +78,13 @@
 
         <ul>
             <li>
-                <span>Dark</span>
-                <span>Light</span>
+                <span>{% trans "Dark" %}</span>
+                <span>{% trans "Light" %}</span>
 
             </li>
         </ul>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
             $('ul').click(function(){
@@ -95,13 +96,28 @@
     </script>
 
     <div id="app-visualizer">
+        {% load i18n %}
+            <form action="{% url 'set_language' %}" method="post">
+                {% csrf_token %}
+                <input name="next" type="hidden" value="{{ redirect_to }}" />
+                <select name="language">
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+                    {% for lang in LANGUAGES %}
+                        <option value="{{ lang.0 }}" {% if lang.0 == LANGUAGE_CODE %} selected="selected"{% endif %}>
+                            {{ lang.1 }} ({{ lang.0 }})
+                        </option>
+                    {% endfor %}
+                </select>
+                <input type="submit" value="Go" />
+            </form>
 
 
         <div class="voting-container">
-            <h1>  Votación [[ voting.id ]] - [[ voting.name ]]</h1>
+            <h1>  {% blocktrans %} Voting [[ voting.id ]] - [[ voting.name ]] {% endblocktrans %}</h1>
 
-            <h2 v-if="!voting.start_date">Votación no comenzada</h2>
-            <h2 v-else-if="!voting.end_date">Votación en curso</h2>
+            <h2 v-if="!voting.start_date">{% trans "Voting not started" %}</h2>
+            <h2 v-else-if="!voting.end_date">{% trans "Ongoing voting" %}</h2>
             <div v-else>
 
 
@@ -109,9 +125,9 @@
                 <table style="margin: 0 auto;" class="content-table"  >
                     <thead>
                         <tr>
-                            <th>Option</th>
-                            <th>Score</th>
-                            <th>Votes</th>
+                            <th>{% trans "Option" %}</th>
+                            <th>{% trans "Score" %}</th>
+                            <th>{% trans "Votes" %}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -143,17 +159,17 @@
     <br>
     <br>
 
-    <button class="btn btn1" id="graf1">Export this Chart to PNG</button>
+    <button class="btn btn1" id="graf1">{% trans "Export this Chart to PNG" %}</button>
 
 
-    <button class="btn btn2" id="graf2">Export this Chart to PNG</button>
+    <button class="btn btn2" id="graf2">{% trans "Export this Chart to PNG" %}</button>
 
     <br>
     <br>
 
-    <button class="btn btn3" id="save">Export this votation to PDF</button>
+    <button class="btn btn3" id="save">{% trans "Export this votation to PDF" %}</button>
 
-    <a class="excel" href="excel"> Export this votation to excel</a>
+    <a class="excel" href="excel"> {% trans "Export this votation to Excel" %}</a>
 
 
 
@@ -378,27 +394,26 @@ graphDonut.setData(extraerDatos(voting.postproc.length))
 </script>
 
 <footer>
-
+                                 
     <div class="container-footer-all">
         <div class="container-body">
 
             <div class="colum1">
-                <h1> More information about the plataform </h1>
+                <h1> {% trans "More information about the plataform" %} </h1>
 
-                <p>  The objective of this project is to implement 
+                <p> 
+                    {% blocktrans %}The objective of this project is to implement 
                     a secure electronic voting platform,which complies
                     with a series of basic guarantees, 
                     such as anonymity and voting secrecy. 
                     It is an educational project, designed to study voting 
                     systems, so simplicity takes precedence over efficiency 
                     whenever possible. Therefore, some shortcomings are
-                     ssumed to allow it to be understood and extended.
-                </p>
-
+                    assumed to allow it to be understood and extended.{% endblocktrans %}
             </div>
 
             <div class="colum2">
-                <h1> Contact Information</h1>
+                <h1> {% trans "Contact Information" %}</h1>
                 <div class="row1">
                     <i class="fa fa-home" style="font-size:25px;color:white"></i>
                     <label> Escuela Técnica Superior de Ingeniería Informática, Universidad de Sevilla, 41012 Sevilla</label>
@@ -421,7 +436,7 @@ graphDonut.setData(extraerDatos(voting.postproc.length))
         <div class="container-footer">
 
                 <div class="copyright">
-                    © All rights reserved
+                    © {% trans "All rights reserved" %}
                 </div>
         </div>
 
