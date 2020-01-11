@@ -328,7 +328,7 @@ footer {
     font-family: 'Montserrat';
     margin-top: 50px;
     margin-left: 500px;
-    margin-bottom: 50px
+    margin-bottom: 50px;
     font-size:  32px;
     font-weight: 500;
     display: flex;
@@ -345,3 +345,24 @@ footer {
     body{font-size: 12px;}
 }
 
+#about{
+  
+    top:  45px;
+    right: 80px;
+    background: #000;
+    color: #FFF;
+    cursor: pointer;
+    margin-top: 40px;
+    margin-left: 10px;
+}
+
+#contact{
+  
+    top:  45px;
+    right: 80px;
+    background: #000;
+    color: #FFF;
+    cursor: pointer;
+    margin-top: 40px;
+    margin-left: 10px;
+}
