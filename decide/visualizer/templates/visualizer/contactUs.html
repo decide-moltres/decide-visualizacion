@@ -2,6 +2,8 @@
 {% load i18n static %}
 
 {% block extrahead %}
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,800" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="{% static 'booth/contactUs.css' %}" />
 {% endblock %}
@@ -17,7 +19,7 @@
         </div>
     </div>
 
-<button class=button onclick="window.history.go(-1);">Atrás</button>
+<button id=back class=button onclick="window.history.go(-1);">Atrás</button>
 
 {% endblock %}
 
@@ -44,8 +46,8 @@
             Ezequiel Portillo Jurado 
             </td>
             <td class=correo>
-            <a href=""><img onclick="window.open('mailto:ezeporjur@alum.us.es?subject=Decide!&body=Querido Ezequiel: Soy _______ y le escribo este correo con motivo:');" 
-                src="https://images.vexels.com/media/users/3/130187/isolated/preview/5e8d2205ecc8cde3235581fc5ecfa430-icono-de-esquema-de-correo-electr--nico-by-vexels.png" height="20" width="20"></a><br>
+            <button id=correoEz><a href=""><img onclick="window.open('mailto:ezeporjur@alum.us.es?subject=Decide!&body=Querido Ezequiel: Soy _______ y le escribo este correo con motivo:');" 
+                src="https://images.vexels.com/media/users/3/130187/isolated/preview/5e8d2205ecc8cde3235581fc5ecfa430-icono-de-esquema-de-correo-electr--nico-by-vexels.png" height="20" width="20"></a></button><br>
             </td>
         </tr>
         <tr>
@@ -53,8 +55,8 @@
                 Belén Garrido López
             </td>
             <td class=correo>
-            <a href=""><img onclick="window.open('mailto:belgarlop3@alum.us.es?subject=Decide!&body=Querida Belén: Soy _______ y le escribo este correo con motivo:');" 
-                src="https://images.vexels.com/media/users/3/130187/isolated/preview/5e8d2205ecc8cde3235581fc5ecfa430-icono-de-esquema-de-correo-electr--nico-by-vexels.png" height="20" width="20"></a><br>
+            <button id=correoB><a href=""><img onclick="window.open('mailto:belgarlop3@alum.us.es?subject=Decide!&body=Querida Belén: Soy _______ y le escribo este correo con motivo:');" 
+                src="https://images.vexels.com/media/users/3/130187/isolated/preview/5e8d2205ecc8cde3235581fc5ecfa430-icono-de-esquema-de-correo-electr--nico-by-vexels.png" height="20" width="20"></a></button><br>
             </td>
         </tr>
         <tr>
@@ -62,8 +64,8 @@
                 Marta Dorante Cardoso  
             </td> 
             <td class=correo>
-            <a href=""><img onclick="window.open('mailto:mardorcar@alum.us.es?subject=Decide!&body=Querida Marta: Soy _______ y le escribo este correo con motivo:');" 
-                src="https://images.vexels.com/media/users/3/130187/isolated/preview/5e8d2205ecc8cde3235581fc5ecfa430-icono-de-esquema-de-correo-electr--nico-by-vexels.png" height="20" width="20"></a><br>
+            <button id=correoMt><a href=""><img onclick="window.open('mailto:mardorcar@alum.us.es?subject=Decide!&body=Querida Marta: Soy _______ y le escribo este correo con motivo:');" 
+                src="https://images.vexels.com/media/users/3/130187/isolated/preview/5e8d2205ecc8cde3235581fc5ecfa430-icono-de-esquema-de-correo-electr--nico-by-vexels.png" height="20" width="20"></a></button><br>
             </td>
         </tr>
         <tr>
@@ -71,8 +73,8 @@
                 María de Gracia Piñero Pastor  
             </td>
             <td class=correo>
-            <a href=""><img onclick="window.open('mailto:marpinpas@alum.us.es?subject=Decide!&body=Querida María de Gracia: Soy _______ y le escribo este correo con motivo:');" 
-                src="https://images.vexels.com/media/users/3/130187/isolated/preview/5e8d2205ecc8cde3235581fc5ecfa430-icono-de-esquema-de-correo-electr--nico-by-vexels.png" height="20" width="20"></a><br>
+            <button id=correoMar><a href=""><img onclick="window.open('mailto:marpinpas@alum.us.es?subject=Decide!&body=Querida María de Gracia: Soy _______ y le escribo este correo con motivo:');" 
+                src="https://images.vexels.com/media/users/3/130187/isolated/preview/5e8d2205ecc8cde3235581fc5ecfa430-icono-de-esquema-de-correo-electr--nico-by-vexels.png" height="20" width="20"></a></button></br>
             </td>
         </tr>
         <tr>
@@ -80,8 +82,8 @@
                 Alejandro Rodríguez Díaz 
             </td>
             <td class=correo>
-            <a href=""><img onclick="window.open('mailto:aleroddia1@alum.us.es?subject=Decide!&body=Querido Alejandro: Soy _______ y le escribo este correo con motivo:');"
-                src="https://images.vexels.com/media/users/3/130187/isolated/preview/5e8d2205ecc8cde3235581fc5ecfa430-icono-de-esquema-de-correo-electr--nico-by-vexels.png" height="20" width="20"></a><br>
+            <button id=correoAle><a href=""><img onclick="window.open('mailto:aleroddia1@alum.us.es?subject=Decide!&body=Querido Alejandro: Soy _______ y le escribo este correo con motivo:');"
+                src="https://images.vexels.com/media/users/3/130187/isolated/preview/5e8d2205ecc8cde3235581fc5ecfa430-icono-de-esquema-de-correo-electr--nico-by-vexels.png" height="20" width="20"></a></button><br>
             </td>
         </tr>
     </table>
