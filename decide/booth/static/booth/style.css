@@ -354,5 +354,14 @@ footer {
     cursor: pointer;
     margin-top: 40px;
     margin-left: 10px;
-
+}
+#contact{
+  
+    top:  45px;
+    right: 80px;
+    background: #000;
+    color: #FFF;
+    cursor: pointer;
+    margin-top: 40px;
+    margin-left: 10px;
 }
