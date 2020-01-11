@@ -34,7 +34,7 @@
     left: 20px;
     display: table;
     margin-top: 0;
-
+    vertical-align: middle;
 } 
 
 footer {
