@@ -46,27 +46,26 @@
                 <h1> DECIDE </h1>
                 
             </div>
-
-            <ul class="navigation">
-                <a><li>About Us</li></a>
+            
+            <div class="navigation">
+                <a onclick="window.location.href=getURLAU()"><li>About Us</li></a>
                 <a onclick="window.location.href=getURL();"><li>Contact</li></a>
 
 
-            </ul>
+            </div>
         </div>
 
     </div>
 
 
-    <a>
+    <label>
         <button  class="highcontrast">ALTO CONTRASTE</button>
-    </a>
+    </label>
 
     <script type="text/javascript">
         $(document).ready(function(){
-            $('a').click(function(){
+            $('label').click(function(){
 
-                $('button').toggleClass('active')
                 $('body').toggleClass('contrast')
                 $('highcontrast').toggleClass('contrast')
                              
@@ -182,6 +181,18 @@
         partes = url.split('/');
         var page = partes[partes.length-2];
         var newURL = url.replace(page,"contactUs")
+        return newURL
+    }
+    
+    </script>
+
+<script>
+    
+    function getURLAU() {
+        var url = document.location.href; 
+        partes = url.split('/');
+        var page = partes[partes.length-2];
+        var newURL = url.replace(page,"aboutUs")
         return newURL
     }
     
@@ -408,7 +419,7 @@ graphDonut.setData(extraerDatos(voting.postproc.length))
                     It is an educational project, designed to study voting 
                     systems, so simplicity takes precedence over efficiency 
                     whenever possible. Therefore, some shortcomings are
-                     ssumed to allow it to be understood and extended.
+                    ssumed to allow it to be understood and extended.
                 </p>
 
             </div>
