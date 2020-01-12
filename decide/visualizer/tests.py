@@ -5,11 +5,12 @@ from django.test import TestCase
 import unittest
 from selenium import webdriver
 from selenium.webdriver.support.ui import Select
-
+'''
 class TestSignup(unittest.TestCase):
 
     def setUp(self):
-        self.driver = webdriver.Firefox()
+        self.driver = webdriver.Chrome()
+        self.driver.fullscreen_window()
         
     def test_signup_fire(self):
         self.driver.get("https://decide-moltres-visualizacion.herokuapp.com/admin/login/?next=/admin/")
@@ -28,7 +29,8 @@ if __name__ == '__main__':
 class TestDarkMode(unittest.TestCase):
 
     def setUp(self):
-        self.driver = webdriver.Firefox()
+        self.driver = webdriver.Chrome()
+        self.driver.fullscreen_window()
         
     def test_darkmode_fire(self):
         self.driver.get("https://decide-moltres-visualizacion.herokuapp.com/admin/login/?next=/admin/")
@@ -45,7 +47,8 @@ class TestDarkMode(unittest.TestCase):
 class TestLightMode(unittest.TestCase):
 
     def setUp(self):
-        self.driver = webdriver.Firefox()
+        self.driver = webdriver.Chrome()
+        self.driver.fullscreen_window()
 
     def test_lightmode_fire(self):
         self.driver.get("https://decide-moltres-visualizacion.herokuapp.com/login/?next=/admin/")
@@ -62,7 +65,8 @@ class TestLightMode(unittest.TestCase):
 class TestExportPDF(unittest.TestCase):
 
     def setUp(self):
-        self.driver = webdriver.Firefox()
+        self.driver = webdriver.Chrome()
+        self.driver.fullscreen_window()
         
     def test_signup_fire(self):
         self.driver.get("https://decide-moltres-visualizacion.herokuapp.com/admin/login/?next=/admin/")
@@ -78,8 +82,9 @@ class TestExportPDF(unittest.TestCase):
 class TestExportPNG1(unittest.TestCase):
 
     def setUp(self):
-        self.driver = webdriver.Firefox()
-        
+        self.driver = webdriver.Chrome()
+        self.driver.fullscreen_window()
+
     def test_signup_fire(self):
         self.driver.get("https://decide-moltres-visualizacion.herokuapp.com/admin/login/?next=/admin/")
         self.driver.find_element_by_id('id_username').send_keys("visualizacion")
@@ -94,7 +99,8 @@ class TestExportPNG1(unittest.TestCase):
 class TestExportPNG2(unittest.TestCase):
 
     def setUp(self):
-        self.driver = webdriver.Firefox()
+        self.driver = webdriver.Chrome()
+        self.driver.fullscreen_window()
         
     def test_signup_fire(self):
         self.driver.get("https://decide-moltres-visualizacion.herokuapp.com/admin/login/?next=/admin/")
@@ -110,7 +116,8 @@ class TestExportPNG2(unittest.TestCase):
 class TestContactUs(unittest.TestCase):
 
     def setUp(self):
-        self.driver = webdriver.Firefox()
+        self.driver = webdriver.Chrome()
+        self.driver.fullscreen_window()
 
     def test_contactUs_fire(self):
         self.driver.get("http://https://decide-moltres-visualizacion.herokuapp.com/admin/login/?next=/admin/")
@@ -126,7 +133,8 @@ class TestContactUs(unittest.TestCase):
 class TestBackContactUs(unittest.TestCase):
 
     def setUp(self):
-        self.driver = webdriver.Firefox()
+        self.driver = webdriver.Chrome()
+        self.driver.fullscreen_window()
 
     def test_backContactUs_fire(self):
         self.driver.get("http://https://decide-moltres-visualizacion.herokuapp.com/admin/login/?next=/admin/")
@@ -144,7 +152,8 @@ class TestBackContactUs(unittest.TestCase):
 class TestSendEmail(unittest.TestCase):
 
     def setUp(self):
-        self.driver = webdriver.Firefox()
+        self.driver = webdriver.Chrome()
+        self.driver.fullscreen_window()
 
     def test_sendEmail_fire(self):
         self.driver.get("http://https://decide-moltres-visualizacion.herokuapp.com/admin/login/?next=/admin/")
@@ -161,7 +170,8 @@ class TestSendEmail(unittest.TestCase):
         
 class TestLanguge(unittest.TestCase):
     def setUp(self):
-        self.driver = webdriver.Firefox()
+        self.driver = webdriver.Chrome()
+        self.driver.fullscreen_window()
 
     def test_language_fire(self):
         self.driver.get("https://decide-moltres-visualizacion.herokuapp.com/admin/?next=/admin/")
@@ -177,50 +187,54 @@ class TestLanguge(unittest.TestCase):
 
 class TestExcel(unittest.TestCase):
     def setUp(self):
-        self.driver = webdriver.Firefox()
+        self.driver = webdriver.Chrome()
+        self.driver.fullscreen_window()
 
     def test_excel_fire(self):
-        self.driver.get("http://https://decide-moltres-visualizacion.herokuapp.com/admin/login/?next=/admin/")
+        self.driver.get("https://decide-moltres-visualizacion.herokuapp.com/admin/login/?next=/admin/")
         self.driver.find_element_by_id('id_username').send_keys("visualizacion")
         self.driver.find_element_by_id('id_password').send_keys("visualizacion")
         self.driver.find_element_by_id('login-form').click()
-        self.driver.get("http://https://decide-moltres-visualizacion.herokuapp.com/visualizer/4/")
+        self.driver.get("https://decide-moltres-visualizacion.herokuapp.com/visualizer/4/")
         self.driver.find_element_by_id('excel').click()
 
 class TestExcel(unittest.TestCase):
     def setUp(self):
-        self.driver = webdriver.Firefox()
+        self.driver = webdriver.Chrome()
+        self.driver.fullscreen_window()
 
     def test_excel_fire(self):
-        self.driver.get("http://https://decide-moltres-visualizacion.herokuapp.com/admin/login/?next=/admin/")
+        self.driver.get("https://decide-moltres-visualizacion.herokuapp.com/admin/login/?next=/admin/")
         self.driver.find_element_by_id('id_username').send_keys("visualizacion")
         self.driver.find_element_by_id('id_password').send_keys("visualizacion")
         self.driver.find_element_by_id('login-form').click()
-        self.driver.get("http://https://decide-moltres-visualizacion.herokuapp.com/visualizer/4/")
+        self.driver.get("https://decide-moltres-visualizacion.herokuapp.com/visualizer/4/")
         self.driver.find_element_by_id('excel').click()
 
 class TestAboutUs(unittest.TestCase):
     def setUp(self):
-        self.driver = webdriver.Firefox()
+        self.driver = webdriver.Chrome()
+        self.driver.fullscreen_window()
 
     def test_about_us_fire(self):
-        self.driver.get("http://https://decide-moltres-visualizacion.herokuapp.com/admin/login/?next=/admin/")
+        self.driver.get("https://decide-moltres-visualizacion.herokuapp.com/admin/login/?next=/admin/")
         self.driver.find_element_by_id('id_username').send_keys("visualizacion")
         self.driver.find_element_by_id('id_password').send_keys("visualizacion")
         self.driver.find_element_by_id('login-form').click()
-        self.driver.get("http://https://decide-moltres-visualizacion.herokuapp.com/visualizer/4/")
+        self.driver.get("https://decide-moltres-visualizacion.herokuapp.com/visualizer/4/")
         self.driver.find_element_by_id('about').click()        
-
+'''
 class TestHighContrast(unittest.TestCase):
     def setUp(self):
-        self.driver = webdriver.Firefox()
+        self.driver = webdriver.Chrome()
+        self.driver.fullscreen_window()
 
     def test_high_contrast_fire(self):
-        self.driver.get("http://https://decide-moltres-visualizacion.herokuapp.com/admin/login/?next=/admin/")
+        self.driver.get("https://decide-moltres-visualizacion.herokuapp.com/admin/login/?next=/admin/")
         self.driver.find_element_by_id('id_username').send_keys("visualizacion")
         self.driver.find_element_by_id('id_password').send_keys("visualizacion")
         self.driver.find_element_by_id('login-form').click()
-        self.driver.get("http://https://decide-moltres-visualizacion.herokuapp.com/visualizer/4/")
+        self.driver.get("https://decide-moltres-visualizacion.herokuapp.com/visualizer/4/")
         self.driver.find_element_by_id('alto_contraste').click()        
 
 

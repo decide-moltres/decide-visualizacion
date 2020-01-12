@@ -11,10 +11,10 @@ language: python
 python:
 - '3.6'
 before_install:
-- wget https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckodriver-v0.26.0-linux64.tar.gz
-- mkdir geckodriver
-- tar -xzf geckodriver-v0.26.0-linux64.tar.gz -C geckodriver
-- export PATH=$PATH:$PWD/geckodriver
+- wget https://chromedriver.storage.googleapis.com/79.0.3945.36/chromedriver_linux64.zip
+- mkdir chromedriver
+- tar -xzf chromedriver_linux64 -C chromedriver
+- export PATH=$PATH:$PWD/chromedriver
 install:
 - pip install -r requirements.txt
 - pip install codacy-coverage
