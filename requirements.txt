@@ -3,6 +3,7 @@ django-heroku
 gunicorn
 xlwt
 selenium
+python-gettext
 reportlab==3.5.18
 pycryptodome==3.6.6
 djangorestframework==3.7.7
