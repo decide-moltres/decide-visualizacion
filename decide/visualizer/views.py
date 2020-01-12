@@ -66,15 +66,3 @@ def export_users_xls(request, voting_id):
                     col_num +=1
     wb.save(response)
     return response
-
-    class ContactUs(TemplateView):
-    try:
-        template_name = 'visualizer/contactUs.html'
-    except:
-        raise Http404
-
-    class AboutUs(TemplateView):
-    try:
-        template_name = 'visualizer/aboutUs.html'
-    except:
-        raise Http404
