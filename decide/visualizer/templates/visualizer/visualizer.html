@@ -99,7 +99,7 @@
             <form action="{% url 'set_language' %}" method="post">
                 {% csrf_token %}
                 <input name="next" type="hidden" value="{{ redirect_to }}" />
-                <select name="language">
+                <select name="language" id="language"> 
                     {% get_current_language as LANGUAGE_CODE %}
                     {% get_available_languages as LANGUAGES %}
                     {% for lang in LANGUAGES %}
@@ -108,7 +108,7 @@
                         </option>
                     {% endfor %}
                 </select>
-                <input type="submit" value="Go" />
+                <input type="submit" value="Go" id="go"/>
             </form>
 
 
@@ -168,7 +168,7 @@
 
     <button class="btn btn3" id="save">{% trans "Export this votation to PDF" %}</button>
 
-    <a class="excel" href="excel"> {% trans "Export this votation to Excel" %}</a>
+    <a class="excel" href="excel"id ="excel"> {% trans "Export this votation to Excel" %}</a>
 
 
 
