@@ -1,6 +1,5 @@
 from django.test import TestCase
 
-# Create your tests here.
 
 import unittest
 from selenium import webdriver
@@ -223,7 +222,7 @@ class TestAboutUs(unittest.TestCase):
         self.driver.find_element_by_id('login-form').click()
         self.driver.get("https://decide-moltres-visualizacion.herokuapp.com/visualizer/4/")
         self.driver.find_element_by_id('about').click()        
-'''
+
 class TestHighContrast(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome()
@@ -236,7 +235,7 @@ class TestHighContrast(unittest.TestCase):
         self.driver.find_element_by_id('login-form').click()
         self.driver.get("https://decide-moltres-visualizacion.herokuapp.com/visualizer/4/")
         self.driver.find_element_by_id('alto_contraste').click()        
-
+'''
 
 
 

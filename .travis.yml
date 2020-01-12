@@ -10,11 +10,11 @@ before_script:
 language: python
 python:
 - '3.6'
-before_install:
-- wget https://chromedriver.storage.googleapis.com/79.0.3945.36/chromedriver_linux64.zip
-- mkdir chromedriver
-- unzip chromedriver_linux64 -C chromedriver
-- export PATH=$PATH:$PWD/chromedriver
+#before_install:
+#- wget https://chromedriver.storage.googleapis.com/79.0.3945.36/chromedriver_linux64.zip
+#- mkdir chromedriver
+#- unzip chromedriver_linux64 -C chromedriver
+#- export PATH=$PATH:$PWD/chromedriver
 install:
 - pip install -r requirements.txt
 - pip install codacy-coverage
