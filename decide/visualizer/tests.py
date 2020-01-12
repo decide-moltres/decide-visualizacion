@@ -165,8 +165,8 @@ class TestLanguge(unittest.TestCase):
 
     def test_language_fire(self):
         self.driver.get("https://decide-moltres-visualizacion.herokuapp.com/admin/?next=/admin/")
-        self.driver.find_element_by_id('id_username').send_keys("practica")
-        self.driver.find_element_by_id('id_password').send_keys("practica")
+        self.driver.find_element_by_id('id_username').send_keys("visualizacion")
+        self.driver.find_element_by_id('id_password').send_keys("visualizacion")
         self.driver.find_element_by_id('login-form').click()
         self.driver.get("https://decide-moltres-visualizacion.herokuapp.com/visualizer/4/")
         self.driver.find_element_by_xpath('//button[normalize-space()="Export this votation to PDF"]')
@@ -181,13 +181,47 @@ class TestExcel(unittest.TestCase):
 
     def test_excel_fire(self):
         self.driver.get("http://https://decide-moltres-visualizacion.herokuapp.com/admin/login/?next=/admin/")
-        self.driver.find_element_by_id('id_username').send_keys("practica")
-        self.driver.find_element_by_id('id_password').send_keys("practica")
+        self.driver.find_element_by_id('id_username').send_keys("visualizacion")
+        self.driver.find_element_by_id('id_password').send_keys("visualizacion")
         self.driver.find_element_by_id('login-form').click()
         self.driver.get("http://https://decide-moltres-visualizacion.herokuapp.com/visualizer/4/")
         self.driver.find_element_by_id('excel').click()
 
+class TestExcel(unittest.TestCase):
+    def setUp(self):
+        self.driver = webdriver.Firefox()
 
+    def test_excel_fire(self):
+        self.driver.get("http://https://decide-moltres-visualizacion.herokuapp.com/admin/login/?next=/admin/")
+        self.driver.find_element_by_id('id_username').send_keys("visualizacion")
+        self.driver.find_element_by_id('id_password').send_keys("visualizacion")
+        self.driver.find_element_by_id('login-form').click()
+        self.driver.get("http://https://decide-moltres-visualizacion.herokuapp.com/visualizer/4/")
+        self.driver.find_element_by_id('excel').click()
+
+class TestAboutUs(unittest.TestCase):
+    def setUp(self):
+        self.driver = webdriver.Firefox()
+
+    def test_about_us_fire(self):
+        self.driver.get("http://https://decide-moltres-visualizacion.herokuapp.com/admin/login/?next=/admin/")
+        self.driver.find_element_by_id('id_username').send_keys("visualizacion")
+        self.driver.find_element_by_id('id_password').send_keys("visualizacion")
+        self.driver.find_element_by_id('login-form').click()
+        self.driver.get("http://https://decide-moltres-visualizacion.herokuapp.com/visualizer/4/")
+        self.driver.find_element_by_id('about').click()        
+
+class TestHighContrast(unittest.TestCase):
+    def setUp(self):
+        self.driver = webdriver.Firefox()
+
+    def test_high_contrast_fire(self):
+        self.driver.get("http://https://decide-moltres-visualizacion.herokuapp.com/admin/login/?next=/admin/")
+        self.driver.find_element_by_id('id_username').send_keys("visualizacion")
+        self.driver.find_element_by_id('id_password').send_keys("visualizacion")
+        self.driver.find_element_by_id('login-form').click()
+        self.driver.get("http://https://decide-moltres-visualizacion.herokuapp.com/visualizer/4/")
+        self.driver.find_element_by_id('alto_contraste').click()        
 
 
 
