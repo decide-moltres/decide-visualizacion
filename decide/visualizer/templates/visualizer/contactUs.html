@@ -1,0 +1,158 @@
+{% extends "base.html" %}
+{% load i18n static %}
+
+{% block extrahead %}
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,800" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="{% static 'booth/contactUs.css' %}" />
+{% endblock %}
+
+{% block content %}
+<body>
+
+    <div class="header">
+        <div class="inner_header">
+            <div class="logotipo">
+                <h1>
+                    <img src= "https://i.imgur.com/fEv94f0.png"
+                    width="250"
+                    height="60">
+                </h1>
+            </div>
+        </div>
+    </div>
+
+<button class=button onclick="window.history.go(-1);">Return</button>
+
+{% endblock %}
+
+{% block extrabody %}
+<body>
+    <div class="body">
+    <h1> ¡Contact Us!</h1>
+
+    <p> The Decide platform has been developed by the wadobo company, and modified by the Decide-Moltres team</p>
+    <p> Decide-Moltres has a series of work modules, such as the Booth, Voting, Auth, Visualization module ... </p>
+    <p> If you wish to contact us, the contacts of the members of the Visualization team are shown below:</p>
+    <div class=table>
+    <table class=contact>
+        <tr>
+            <th>
+                Members
+            </th>
+            <th>
+                Emails
+            </th>
+        </tr>
+        <tr>
+            <td>
+            Ezequiel Portillo Jurado 
+            </td>
+            <td class=correo>
+            <button id=correoEz><a href=""><img onclick="window.open('mailto:ezeporjur@alum.us.es?subject=Decide!&body=Querido Ezequiel: Soy _______ y le escribo este correo con motivo:');" 
+                src="https://images.vexels.com/media/users/3/130187/isolated/preview/5e8d2205ecc8cde3235581fc5ecfa430-icono-de-esquema-de-correo-electr--nico-by-vexels.png" height="20" width="20"></a></button><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Belén Garrido López
+            </td>
+            <td class=correo>
+            <button id=correoB><a href=""><img onclick="window.open('mailto:belgarlop3@alum.us.es?subject=Decide!&body=Querida Belén: Soy _______ y le escribo este correo con motivo:');" 
+                src="https://images.vexels.com/media/users/3/130187/isolated/preview/5e8d2205ecc8cde3235581fc5ecfa430-icono-de-esquema-de-correo-electr--nico-by-vexels.png" height="20" width="20"></a></button><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Marta Dorante Cardoso  
+            </td> 
+            <td class=correo>
+            <button id=correoMt><a href=""><img onclick="window.open('mailto:mardorcar@alum.us.es?subject=Decide!&body=Querida Marta: Soy _______ y le escribo este correo con motivo:');" 
+                src="https://images.vexels.com/media/users/3/130187/isolated/preview/5e8d2205ecc8cde3235581fc5ecfa430-icono-de-esquema-de-correo-electr--nico-by-vexels.png" height="20" width="20"></a></button><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                María de Gracia Piñero Pastor  
+            </td>
+            <td class=correo>
+            <button id=correoMar><a href=""><img onclick="window.open('mailto:marpinpas@alum.us.es?subject=Decide!&body=Querida María de Gracia: Soy _______ y le escribo este correo con motivo:');" 
+                src="https://images.vexels.com/media/users/3/130187/isolated/preview/5e8d2205ecc8cde3235581fc5ecfa430-icono-de-esquema-de-correo-electr--nico-by-vexels.png" height="20" width="20"></a></button></br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Alejandro Rodríguez Díaz 
+            </td>
+            <td class=correo>
+            <button id=correoAle><a href=""><img onclick="window.open('mailto:aleroddia1@alum.us.es?subject=Decide!&body=Querido Alejandro: Soy _______ y le escribo este correo con motivo:');"
+                src="https://images.vexels.com/media/users/3/130187/isolated/preview/5e8d2205ecc8cde3235581fc5ecfa430-icono-de-esquema-de-correo-electr--nico-by-vexels.png" height="20" width="20"></a></button><br>
+            </td>
+        </tr>
+    </table>
+    </div>
+    <p>  In case of any doubt, or suggestion, or if you might find a fault, do not hesitate to contact us.</p>
+    <p>  We will try to solve it in the best possible way. Thank you!</p>
+    </div>
+
+</body>
+<footer>
+
+    <div class="container-footer-all">
+        <div class="container-body">
+
+            <div class="colum1">
+                <h1> More information about the plataform </h1>
+
+                <p>  The objective of this project is to implement 
+                    a secure electronic voting platform,which complies
+                    with a series of basic guarantees, 
+                    such as anonymity and voting secrecy. 
+                    It is an educational project, designed to study voting 
+                    systems, so simplicity takes precedence over efficiency 
+                    whenever possible. Therefore, some shortcomings are
+                    ssumed to allow it to be understood and extended.
+                </p>
+            </div>
+
+            <div class="colum2">
+                <h1> Contact Information</h1>
+                <div class="row1">
+                    <i class="fa fa-home" style="font-size:25px;color:white"></i>
+                    <label> Escuela Técnica Superior de Ingeniería Informática, Universidad de Sevilla, 41012 Sevilla</label>
+                </div>
+
+                <div class="row2">
+                    <i class="fa fa-envelope" style="font-size:20px;color:white"></i>
+                    <label> decide-visualizacion-moltres@gmail.com</label>
+                </div>
+
+                <div class="row3">
+                    <i class="fa fa-internet-explorer" style="font-size:20px;color:white"></i>
+                    <label> https://1984.lsi.us.es/wiki-egc </label>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="container-footer">
+
+                <div class="copyright">
+                    © All rights reserved
+                </div>
+        </div>
+
+    </div>
+</footer>
+<script>
+function enviarCorreo () {
+    var thread = GmailApp.getInboxThreads(0,1)[0]; // get first thread in inbox
+    var message = thread.getMessages()[0]; // get first message
+    Logger.log(message.getFrom());
+}
+
+</script>
+</body>
+{% endblock %}

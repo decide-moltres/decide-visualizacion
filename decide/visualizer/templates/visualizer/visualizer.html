@@ -3,6 +3,7 @@
 
 {% block extrahead %}
 
+    <meta name="viewport" content="width=devide-width", initial-scale="1.0">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,800" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="{% static 'booth/style.css' %}" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
@@ -30,42 +31,39 @@
 
 <body>
 
-<section>
+
     <div class="header">
         <div class="inner_header">
 
-            <div class="moltres"
+            <div class="moltres">
                 <h1>
-               <img src=https://vignette.wikia.nocookie.net/es.pokemon/images/0/01/Moltres.png/revision/latest?cb=20160316201747
-               width="100"
-               height="81">
+                        <img src= "https://i.imgur.com/fEv94f0.png"
+                        width="250"
+                        height="60">
                 </h1>
-            </div>
-
-            <div class="logo_container">
-               
-                <h1> DECIDE </h1>
                 
             </div>
-          
-            <ul class="navigation">
-                <a><li>{% trans "About Us" %}</li></a>
-                <a><li>{% trans "Contact" %}</li></a>
 
-            </ul>
+                        
+            <div class="navigation">
+               
+                <a onclick="window.location.href=getURLAU();"><button id=about><li id="about">{% trans "About Us" %}</li></button></a>
+                <a onclick="window.location.href=getURL();"><button id=contact><li id="contact">{% trans "Contact" %}</li></button></a>
+
+
+            </div>
         </div>
-    </div>
-</section>
 
-    <a>
-        <button  class="highcontrast">{% trans "High Contrast" %}</button>
-    </a>
+    </div>
+
+    <label>
+        <button id = alto_contraste class="highcontrast">{% trans "High Contrast" %}</button>
+    </label>
 
     <script type="text/javascript">
         $(document).ready(function(){
-            $('a').click(function(){
+            $('label').click(function(){
 
-                $('button').toggleClass('active')
                 $('body').toggleClass('contrast')
                 $('highcontrast').toggleClass('contrast')
                              
@@ -78,13 +76,14 @@
 
         <ul>
             <li>
-                <span>{% trans "Dark" %}</span>
-                <span>{% trans "Light" %}</span>
+                <span id="switch-mode-dark">{% trans "Dark" %}</span>
+                <span id="switch-mode-light">{% trans "Light" %}</span>
 
             </li>
         </ul>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
             $('ul').click(function(){
@@ -186,6 +185,30 @@
 {% endblock %}
 
 {% block extrabody %}
+
+<script>
+    
+    function getURL() {
+        var url = document.location.href; 
+        partes = url.split('/');
+        var page = partes[partes.length-2];
+        var newURL = url.replace(page,"contactUs")
+        return newURL
+    }
+    
+    </script>
+
+<script>
+    
+    function getURLAU() {
+        var url = document.location.href; 
+        partes = url.split('/');
+        var page = partes[partes.length-2];
+        var newURL = url.replace(page,"aboutUs")
+        return newURL
+    }
+    
+    </script>
 
 <!-- Script que comparte en twitter la url en twitter -->
 <script>
@@ -410,6 +433,7 @@ graphDonut.setData(extraerDatos(voting.postproc.length))
                     systems, so simplicity takes precedence over efficiency 
                     whenever possible. Therefore, some shortcomings are
                     assumed to allow it to be understood and extended.{% endblocktrans %}
+                </p>
             </div>
 
             <div class="colum2">
@@ -444,6 +468,7 @@ graphDonut.setData(extraerDatos(voting.postproc.length))
 </footer>
 
 </body>
+
 
 
 
