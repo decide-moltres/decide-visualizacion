@@ -4,6 +4,8 @@ from django.conf import settings
 from django.http import Http404, HttpResponse
 import xlwt
 from voting.models import Voting
+from reportlab.pdfgen import canvas
+from base import mods
 
 class VisualizerView(TemplateView):
     template_name = 'visualizer/visualizer.html'
