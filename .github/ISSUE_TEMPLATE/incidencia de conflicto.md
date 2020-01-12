@@ -1,6 +1,6 @@
 ---
-name: Incidencia
-about: Crear una plantilla de incidencias
+name: Incidencia de conflicto
+about: Crear una plantilla de incidencias en caso de conflictos
 title: ''
 labels: 'Estado: Nueva'
 assignees: ''
