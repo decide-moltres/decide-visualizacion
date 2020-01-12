@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-11 13:36+0100\n"
+"POT-Creation-Date: 2020-01-12 18:50+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -47,69 +47,76 @@ msgstr ""
 msgid "Conglatulations. Your vote has been sent"
 msgstr ""
 
-#: decide/visualizer/templates/visualizer/visualizer.html:52
+#: decide/decide/settings.py:32
+msgid "Español"
+msgstr ""
+
+#: decide/decide/settings.py:33
+msgid "English"
+msgstr ""
+
+#: decide/visualizer/templates/visualizer/visualizer.html:48
 msgid "About Us"
 msgstr "Sobre Nosotros"
 
-#: decide/visualizer/templates/visualizer/visualizer.html:53
+#: decide/visualizer/templates/visualizer/visualizer.html:49
 msgid "Contact"
 msgstr "Contacto"
 
-#: decide/visualizer/templates/visualizer/visualizer.html:61
+#: decide/visualizer/templates/visualizer/visualizer.html:59
 msgid "High Contrast"
 msgstr "Alto Contraste"
 
-#: decide/visualizer/templates/visualizer/visualizer.html:81
+#: decide/visualizer/templates/visualizer/visualizer.html:78
 msgid "Dark"
 msgstr "Oscuro"
 
-#: decide/visualizer/templates/visualizer/visualizer.html:82
+#: decide/visualizer/templates/visualizer/visualizer.html:79
 msgid "Light"
 msgstr "Claro"
 
-#: decide/visualizer/templates/visualizer/visualizer.html:102
+#: decide/visualizer/templates/visualizer/visualizer.html:116
 msgid " Voting [[ voting.id ]] - [[ voting.name ]] "
 msgstr "Votación [[ voting.id ]] - [[ voting.name ]]"
 
-#: decide/visualizer/templates/visualizer/visualizer.html:104
-msgid "Voting not started"
-msgstr "Votación no comenzada"
+#: decide/visualizer/templates/visualizer/visualizer.html:118
+msgid "Votación no comenzada"
+msgstr ""
 
-#: decide/visualizer/templates/visualizer/visualizer.html:105
-msgid "Ongoing voting"
-msgstr "Votación en curso"
+#: decide/visualizer/templates/visualizer/visualizer.html:119
+msgid "Votación en curso"
+msgstr ""
 
-#: decide/visualizer/templates/visualizer/visualizer.html:113
+#: decide/visualizer/templates/visualizer/visualizer.html:127
 msgid "Option"
 msgstr "Opción"
 
-#: decide/visualizer/templates/visualizer/visualizer.html:114
+#: decide/visualizer/templates/visualizer/visualizer.html:128
 msgid "Score"
 msgstr "Puntuación"
 
-#: decide/visualizer/templates/visualizer/visualizer.html:115
+#: decide/visualizer/templates/visualizer/visualizer.html:129
 msgid "Votes"
 msgstr "Votos"
 
-#: decide/visualizer/templates/visualizer/visualizer.html:147
-#: decide/visualizer/templates/visualizer/visualizer.html:150
+#: decide/visualizer/templates/visualizer/visualizer.html:161
+#: decide/visualizer/templates/visualizer/visualizer.html:164
 msgid "Export this Chart to PNG"
 msgstr "Exportar esta gráfica a PNG"
 
-#: decide/visualizer/templates/visualizer/visualizer.html:155
+#: decide/visualizer/templates/visualizer/visualizer.html:169
 msgid "Export this votation to PDF"
 msgstr "Exportar esta votación a PDF"
 
-#: decide/visualizer/templates/visualizer/visualizer.html:157
+#: decide/visualizer/templates/visualizer/visualizer.html:171
 msgid "Export this votation to Excel"
 msgstr "Exportar esta votación a Excel"
 
-#: decide/visualizer/templates/visualizer/visualizer.html:387
+#: decide/visualizer/templates/visualizer/visualizer.html:425
 msgid "More information about the plataform"
 msgstr "Más información sobre la plataforma"
 
-#: decide/visualizer/templates/visualizer/visualizer.html:390
-
+#: decide/visualizer/templates/visualizer/visualizer.html:427
 msgid ""
 "The objective of this project is to implement \n"
 "                    a secure electronic voting platform,which complies\n"
@@ -128,10 +135,16 @@ msgstr ""
 "algunas carencias\n"
 "                    para permitir que sea entendible y extensible."
 
-#: decide/visualizer/templates/visualizer/visualizer.html:401
+#: decide/visualizer/templates/visualizer/visualizer.html:440
 msgid "Contact Information"
 msgstr "Información de Contacto"
 
-#: decide/visualizer/templates/visualizer/visualizer.html:424
+#: decide/visualizer/templates/visualizer/visualizer.html:463
 msgid "All rights reserved"
 msgstr "Todos los derechos reservados"
+
+#~ msgid "Voting not started"
+#~ msgstr "Votación no comenzada"
+
+#~ msgid "Ongoing voting"
+#~ msgstr "Votación en curso"

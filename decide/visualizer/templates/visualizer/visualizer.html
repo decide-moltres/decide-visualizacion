@@ -45,8 +45,8 @@
                         
             <div class="navigation">
                 
-                <a onclick="window.location.href=getURLAU();"><button id=about><li id="about">About Us</li></button></a>
-                <a onclick="window.location.href=getURL();"><button id=contact><li id="contact">Contact</li></button></a>
+                <a onclick="window.location.href=getURLAU();"><button id=about><li id="about">{% trans "About Us" %}</li></button></a>
+                <a onclick="window.location.href=getURL();"><button id=contact><li id="contact">{% trans "Contact" %}</li></button></a>
 
 
             </div>
@@ -115,8 +115,8 @@
         <div class="voting-container">
             <h1>  {% blocktrans %} Voting [[ voting.id ]] - [[ voting.name ]] {% endblocktrans %}</h1>
 
-            <h2 v-if="!voting.start_date">Votación no comenzada</h2>
-            <h2 v-else-if="!voting.end_date">Votación en curso</h2>
+            <h2 v-if="!voting.start_date">{% trans "Votación no comenzada" %}</h2>
+            <h2 v-else-if="!voting.end_date">{% trans "Votación en curso" %}</h2>
             <div v-else>
 
 

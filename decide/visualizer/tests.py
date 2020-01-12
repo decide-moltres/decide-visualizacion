@@ -167,7 +167,7 @@ class TestSendEmail(unittest.TestCase):
     def tearDown(self):
         self.driver.quit
         
-class TestLanguge(unittest.TestCase):
+class TestLanguage(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome()
         self.driver.fullscreen_window()
